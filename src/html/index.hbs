@@ -5,15 +5,32 @@
 
 	{{> base/meta}}
 
+	<!-- <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="/static/css/jquery-ui.structure.min.css">
+  <link rel="stylesheet" href="/static/css/jquery-ui.theme.min.css">
+  <link rel="stylesheet" href="/static/css/d3-tip.css">
+  <link rel="stylesheet" href="/static/bower_components/chosen/chosen.min.css"> -->
+
 	<link inline rel='stylesheet' href='bundle.css' />
 
 	{{> base/font}}
+
+	<!-- <link rel="stylesheet" href="static/css/bootstrap.min.css">
+	<script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+	<link rel="stylesheet" href="/static/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="/static/css/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="/static/css/jquery-ui.theme.min.css">
+	<link rel="stylesheet" href="/static/css/d3-tip.css">
+	<link rel="stylesheet" href="/static/bower_components/chosen/chosen.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/jquery.marker-animation/build/index.min.js"></script> -->
+
+
 
 </head>
 
 <body>
 
-	{{> base/header 'sticky'}}
 
 	<main id='content'>
 
@@ -24,8 +41,31 @@
 	{{> base/footer }}
 
 
-	<script src='{{basepath}}assets/scripts/d3.v6.0.0.min.js'></script>
+	<script src='{{basepath}}assets/scripts/d3.v5.12.0.min.js'></script>
 	<script src='bundle.js?version={{timestamp}}' async></script>
+
+	<!-- <script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/bower_components/jquery-ui/jquery-ui.min.js"></script>
+	<script src="/static/bower_components/chosen/chosen.jquery.min.js"></script>
+	<script src="/static/js/d3.min.js"></script>
+	<script src="/static/js/d3-tip.js"></script>
+
+	<script src="https://unpkg.com/intersection-observer"></script>
+	<script src="https://unpkg.com/scrollama"></script>
+
+	<script src="/static/js/scroller.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+	<script src="/static/js/utils.js"></script>
+	<script src="/static/js/timeline.js"></script>
+	<script src="/static/js/sunburst.js"></script>
+	<script src="/static/js/tilechart.js"></script>
+
+	<script src="/static/js/main.js"></script> -->
+
+
+
+
 </body>
 
 </html>
