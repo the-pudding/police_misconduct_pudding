@@ -96,7 +96,7 @@ Sunburst.prototype.initVis = function() {
         .attr("transform", "translate(" + (vis.radius - vis.radiusOffset/2) + "," + vis.radius + ")")
         .attr("id", "sunburst-val-pct-text")
         .attr("text-anchor", "middle")
-        .style("fill-opacity", 0.6)
+        //.style("fill-opacity", 0.6)
         .text("");
 
     // Label in the center of the sunburst with count value of the hovered section
@@ -105,7 +105,7 @@ Sunburst.prototype.initVis = function() {
         .attr("id", "sunburst-val-total-text")
         .attr("text-anchor", "middle")
         .attr("dy", 22)
-        .style("fill-opacity", 0.6)
+        //.style("fill-opacity", 0.6)
         .style("font-size", () => phoneBrowsing === true ? "10px" : "12px")
         .text("");
 
@@ -274,7 +274,7 @@ Sunburst.prototype.addSunburstSlices = function() {
             return d.value;
         })
         .attr("d", vis.arc)
-        .attr("fill-opacity", 0.6)
+        //.attr("fill-opacity", 0.6)
         .attr("transform", "translate(" + (vis.radius-(vis.radiusOffset / 2)) + "," + (vis.radius) + ")")
         .on("mouseover", function(d,i,n) {
             $("#sunburst-area path").removeAttr('style');
@@ -371,6 +371,9 @@ Sunburst.prototype.addLabelShadows = function() {
         .enter()
         .append("text")
         .attr("class", "sunburst-chart-label-shadows")
+        .style("stroke",function(d){
+          return outcomeColors(d.data.name);
+        })
         .attr("opacity", d => vis.displaySecondLevel === false && d.depth > 1 ? 0.0 : 1.0)
         // The entrance of a 'new' label will be different if it is genuinely new vs. if it just didn't appear in the last filtering
         // A truly new label (on sunburst entrance) will 'spawn' from the center of the sunburst, one that is making a 're-entrance'
@@ -481,7 +484,7 @@ Sunburst.prototype.mouseout = function() {
 
     vis.mousedOverElement = null;
 
-    $(".sunburst-segment").attr("fill-opacity", 0.6);
+    //$(".sunburst-segment").attr("fill-opacity", 0.6);
 
     vis.selectedValPct
         .text("");
@@ -495,7 +498,7 @@ Sunburst.prototype.mouseover = function(value, element) {
 
     vis.mousedOverElement = element;
 
-    $(".sunburst-segment").attr("fill-opacity", 0.2);
+    // $(".sunburst-segment").attr("fill-opacity", 0.2);
 
     vis.selectedValPct
         .text(d3.format(".1%")(value/vis.totalSize));

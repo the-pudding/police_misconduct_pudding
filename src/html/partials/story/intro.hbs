@@ -42,23 +42,14 @@
 					</a>
 
 					<div class="col-md-10" id="intro-area" style="text-align:left;">
-							<h1>
-								Police Complaint Data Shows A Broken Accountability Process
-							</h1>
+							<h1>{{copy.headline}}</h1>
 							<p class="byline">By <a target="_blank" href="/author/sam-learner">Sam Learner</a></p>
 							<div id="intro-text-block">
-									<p>
-											In the current wake of police violence, protestors are demanding a stronger accountability for officer conduct and misuse of force. In many cities, that accountability is partly served by the civilian complaint process, or how citizens can individually report on police behavior.
-									</p>
-									<p>
-											Police complaints by citizens, ranging from physical abuse to unprofessional conduct, rarely result in consequences for officers. Concrete data is rare among departments, but in 2017, the Philadelphia Police Department became one of the few to report on every officer complaint it received. The patterns found in Philadelphia clarify many of the anecdotal observations across departments throughout the country, especially when it comes to racial disparities (e.g., complaints of White officers by Black civilians).
-									</p>
-									<p>
-											This is a real complaint about verbal abuse, one among 10,000+ complaints dating back to 2013.
-									</p>
+								{{#each copy.intro}}
+									<p>{{{value}}}</p>
+								{{/each}}
 							</div>
 					</div>
-					<div class="col-md-1"></div>
 			</div>
 	</div>
 </div>
@@ -66,7 +57,7 @@
 
 <div class="tile-wrapper" id="sample-complaint-wrapper" style="">
 	<div class="viz-tile" id="sample-complaint-tile">
-		<div class="col-sm-12 col-12" id='sample-tooltip' style="z-index:-1;">
+		<div class="col-sm-12 col-12" id='sample-tooltip' style="">
 					<div class="">
 						<p class='detail-title'>Complaint Summary</p>: <p class='details' id='complaint-summary'>The complainant,
 						SD, 46/B/F, states that she was falsely arrested and verbally abused by Officer H, 19th District. According to the
@@ -112,23 +103,15 @@
 	<div id="sections" class="text-column">
 		<section class="step" id="first-annotation">
 				<div class="body">
-						While Philadelphia’s public complaint data hides the identities of those involved, the records include
-						the race and gender of the officer and person filing the complaint.
+					{{{copy.sampleComplaint1}}}
 				</div>
 		</section>
 
 		<section class="step gap-annotation" id="last-sample-annotation">
 				<div class="body">
-						While complaint investigations in some cities are conducted by civilian oversight boards, in Philadelphia,
-						investigations are conducted by the police department’s own Internal Affairs division.
-						<br><br>
-						In the case of this complaint, the investigation, like all complaints in Philadelphia, is conducted behind
-						closed doors and much of the decision-making process is hidden from public view.
-						<br><br>
-						For this complaint, the police’s investigation of the officer’s alleged verbal abuse is classified as having
-						<span class="annotated-text" style="background-color: rgba(242,142,44,0.6)">no sustained findings</span>.
-						This is legalese for the police department finding there was not sufficient evidence to back up the
-						citizen’s complaint.
+					{{#each copy.sampleComplaint2}}
+						<p>{{{value}}}</p>
+					{{/each}}
 				</div>
 		</section>
 	</div>
@@ -174,39 +157,23 @@
 	<div id="sections" class="text-column">
 		<section class="step section-change">
 				<div class="body">
-						In Philadelphia, the police department drops an overwhelming majority of cases: in the seven years of
-						available data, just 16% of complaints have a
-						<span class="annotated-text" style="background-color: rgba(101,141,198,0.6)">sustained finding</span>—meaning
-						they believed there was enough evidence to support the complaint.
-						<br><br>
-						This aligns with studies from other city police departments, where the rate can range from 6% to 20%.
-						While officer complaints in Philadelphia are investigated by police, some
-						<a href="https://static1.squarespace.com/static/55ad38b1e4b0185f0285195f/t/5b7ecbda1ae6cf17cbe248a8/1535036379266/TerrillIngramPQ+Civilian+Oversight+Study.pdf">evidence</a>
-						exists that investigations involving a civilian oversight board are more likely to result in sustained findings.
+					{{#each copy.sunburst1}}
+						<p>{{{value}}}</p>
+					{{/each}}
 				</div>
 		</section>
 		<section class="step">
 				<div class="body">
-						Sustained complaints do not immediately result in punishment for officers—cases are first passed to an
-						officer’s commander
-						<br><br>
-						The officer’s commander can make a disciplinary decision on their own or may pass the complaint to the Police
-						Board of Inquiry for a disciplinary hearing, conducted by three members of the police department, who make
-						a disciplinary recommendation. Their report is then sent to the Police Commissioner for a final decision
-						on disciplinary action.
-						<br><br>
-						Only 2%, or 218 of the 11,107 complaints since 2013, result in a <span class="annotated-text" style="background-color: rgba(115,152,203,0.6)">guilty finding</span>
-						and consequently the officer is reprimanded, terminationed, suspended, or criminal charged (the data
-						doesn’t make any distinctions among these outcomes).
+					{{#each copy.sunburst2}}
+						<p>{{{value}}}</p>
+					{{/each}}
 				</div>
 		</section>
 		<section class="step">
 				<div class="body">
-						In line with decades of <a href="https://sci-hub.tw/https://onlinelibrary.wiley.com/doi/abs/10.1111/cico.12388">prior research</a>,
-						race correlates strongly with guilty outcomes.
-						<br><br>
-						For example, when a complaint is made by a <span class="category-text white">white</span>
-						civilian, guilty findings increase from 2% to 3%.
+					{{#each copy.sunburst3}}
+						<p>{{{value}}}</p>
+					{{/each}}
 				</div>
 		</section>
 		<section class="step">
@@ -224,7 +191,7 @@
 						against white officers filed by Black complainants result in a guilty finding. White officers are consistently
 						less likely to face disciplinary action than their peers.
 						<br><br>
-						<img class="matrix-image" inline src="outcome_table.svg">
+						<img class="matrix-image" inline src="outcome_table_2.svg">
 						<br><br>
 						Conversely, complaints by <span class="category-text white">white</span> civilians against
 						<span class="category-text black">Black</span> officers have one of the highest rate of guilty

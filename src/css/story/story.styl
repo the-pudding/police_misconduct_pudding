@@ -1,5 +1,6 @@
 
 a
+  color initial
   &:hover
     text-decoration none
     color initial
@@ -116,16 +117,19 @@ p {
     font-family: 'Atlas Grotesk Web';
 }
 
-.d3-tip {
-	overflow-y: auto;
-	max-height: 400px;
-}
-
-.tip-text {
-	font-size: .8rem;
-  font-weight: 300;
-  line-height: 1.4;
-}
+.d3-tip
+  overflow-y auto
+  .tip-text
+    font-size 14px
+    font-weight 300
+    line-height 1.4
+    .details
+      margin-right 5px
+    .detail-title
+      border-radius 3px
+      display inline-block
+      margin 0
+      font-weight 600
 
 #sections, .text-column
   width var(--annotation-width)
@@ -169,6 +173,20 @@ p {
       min-height 0
       box-shadow 0px 0px 4px 1px rgba(0,0,0,.12)
       border 1px solid #a7a7a7
+
+#last-sample-annotation
+  span
+    background-color rgba(242,142,44,0.6)
+
+#sunburst-wrapper
+  .text-column
+    section
+      &:first-of-type
+        span
+          background-color rgba(101,141,198,0.6)
+      &:nth-of-type(2)
+        span
+          background-color rgba(91,182,210,.8)
 
 
 #last-sample-annotation, #last-sunburst-annotation, #last-tilechart-annotation
@@ -327,23 +345,26 @@ p {
   margin-bottom:1rem;
 }
 
-#sample-tooltip {
-    max-width: 630px;
-    line-height: 1.4;
-    font-size: 17px;
-    width:100%;
-    float:none;
-    margin: 0 auto;
-    font-weight:400;
-}
-#sample-tooltip div{
-    margin-bottom: .2rem;
-}
-
-
-#sample-tooltip div:first-of-type{
-    margin-bottom: 2rem;
-}
+#sample-tooltip
+  max-width 630px
+  line-height 1.4
+  font-size 17px
+  width 100%
+  float none
+  margin 0 auto
+  font-weight 400
+  z-index -1
+  div
+    margin 0
+  .detail-title
+    display inline-block
+    margin 0
+    font-size 1rem
+  #complaint-summary
+    font-size 1rem
+    line-height 1.5
+  .details
+    font-size 1rem
 
 #sunburst-static-text {
     text-align: center;
@@ -410,7 +431,7 @@ select.white, span.white {
 }
 
 select.black, span.black {
-	background-color: rgba(50,50,255,0.4);
+	background-color: #FFEB3B;
 }
 
 select.latino, span.latino {
@@ -476,25 +497,14 @@ select.other, span.other {
     max-height 71px
     overflow-y auto !important
     .search-choice
-      font-size .8rem
+      font-size 12px
       font-weight 300
     .search-choice-close
       text-decoration none
       border none
 
-.detail-title {
-    background-color: rgba(28, 148, 196, 0.25);
-    border-radius: 3px;
-    display:inline-block;
-    margin:0;
-	/*margin-bottom: 5px;*/
-	/*padding: 1px;*/
-}
 
 
-#sample-tooltip .detail-title {
-	background-color: rgba(28, 148, 196, 0.0);
-}
 
 
 #tilechart-tile.group-label {
@@ -675,6 +685,7 @@ hr {
     stroke:rgb(255,255,255,.66);
     stroke-width:3px;
     fill:white;
+    stroke-opacity:.2;
 }
 
 .matrix-image {
@@ -693,6 +704,7 @@ hr {
     left: 0;
     padding:0;
     width: calc(100% - var(--annotation-width));
+    transform translate3d(0,0,0)
 }
 
 #desktop-controls{

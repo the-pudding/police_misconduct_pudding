@@ -71,7 +71,7 @@ const phoneBrowsingCutoff = 1100;
 // Set color scale for outcome cateogries, to be used in sunburst, tilechart, and in text of some annotation slides
 const outcomeColors = d3.scaleOrdinal()
     .domain(["Sustained Finding", "No Sustained Findings", "Investigation Pending", "Guilty Finding", "Training/Counseling", "No Guilty Findings", "Discipline Pending"])
-    .range(['#658dc6', '#f28e2c', '#8dc665', "#7498cb", "#93afd7", "#b2c6e2", "#a2a2a2"]);
+    .range(['#658dc6', '#bfbfbf', '#8dc665', "#5bb6d2", "rgba(91,182,210,.6)", "rgba(91,182,210,.5)", "rgba(91,182,210,.4)"]);
 
 // ======== END GLOBALS ======== //
 
@@ -566,8 +566,8 @@ function highlightComplaintOutcome() {
     //     .css("opacity", 0.2);
 
      // Reset fill opacity on all paths to default (0.6)
-    $("#sunburst-area path")
-        .css("fill-opacity", 0.6);
+    // $("#sunburst-area path")
+    //     .css("fill-opacity", 0.6);
 
 
     $("#sample-tooltip .outcome").markerAnimation({
@@ -773,8 +773,8 @@ function guiltyBlackComplainantWhiteOfficer() {
         $("#sunburst-tile")
             .css("opacity", 1.0);
 
-        $("#tilechart-tile")
-            .css("opacity", 0.2);
+        // $("#tilechart-tile")
+        //     .css("opacity", 0.2);
     }
 
     // Set complainant race select to 'Black' and officer race to 'White
@@ -836,8 +836,8 @@ function enableUserExamine() {
         $("#sunburst-tile")
             .css("opacity", 1.0);
 
-        $("#tilechart-tile")
-            .css("opacity", 0.2);
+        // $("#tilechart-tile")
+        //     .css("opacity", 0.2);
     }
 
     // Remove outlined sections from above and enable user control over the select dropdown filters
@@ -1083,7 +1083,7 @@ function setScrollDispatcher() {
   			// text: '.scroll__text', // the step container
   			step: '.step', // the step elements
   			offset: tileOffset, // set the trigger to be 1/2 way down screen
-  			debug: true, // display the trigger offset for testing
+  			// debug: true, // display the trigger offset for testing
   		})
   		.onStepEnter(handleStepEnter);
   		// .onContainerEnter(handleContainerEnter)
@@ -1221,8 +1221,10 @@ function init() {
         officerDisciplineResults = officerDisciplineResults.filter(function(d) {
              return d.investigative_findings !== "Not Applicable" && !(d.investigative_findings === "Sustained Finding" && d.disciplinary_findings === "Not Applicable");
         });
-
+        endRange = utils.addMonths(startDate, maxDateOffset);
         tileChart = new tileChartCreator.TileChart("#chart-area");
+
+
 
         if (phoneBrowsing === false) {
             timeline = new timelineCreator.Timeline("#slider-div");

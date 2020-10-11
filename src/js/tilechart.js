@@ -43,6 +43,10 @@ let TileChart = function(_parentElement) {
 TileChart.prototype.initVis = function() {
     const vis = this;
 
+    startRange = graphic.getStartRange();
+    endRange = graphic.getEndRange();
+    maxDateOffset = graphic.getMaxDateOffset();
+
     // Establish margins
     vis.margin = {top: 90, right: 15, bottom: 45, left: 40};
 
@@ -363,6 +367,7 @@ TileChart.prototype.initVis = function() {
 TileChart.prototype.wrangleData = function() {
 
     startRange = graphic.getStartRange();
+    startDate = graphic.getStartDate();
     endRange = graphic.getEndRange();
     maxDateOffset = graphic.getMaxDateOffset();
 
@@ -400,14 +405,11 @@ TileChart.prototype.wrangleData = function() {
       startRange = graphic.getStartRange();
       endRange = graphic.getEndRange();
 
-      console.log(officerDisciplineResults,startRange,endRange);
+      vis.chartData = officerDisciplineResults
+          .filter(d => d.date_received >= startRange && d.date_received <= endRange)
+          .filter(d => vis.selectedComplaintTypes.includes(d.allegations_investigated))
+          .sort((a, b) => a.date_received - b.date_received);
 
-        vis.chartData = officerDisciplineResults
-            .filter(d => d.date_received >= startRange && d.date_received <= endRange)
-            .filter(d => vis.selectedComplaintTypes.includes(d.allegations_investigated))
-            .sort((a, b) => a.date_received - b.date_received);
-
-        console.log(vis.chartData);
 
         // Update the counts on the complaint types in the 'Complaint Classification' multi-select with counts based on filtered dataset
         vis.updateComplaintTypes();
@@ -803,12 +805,16 @@ TileChart.prototype.setToolTips = function() {
                 yOffset -= vis.blockSize;
             }
             else if (d.end_state === 'No Sustained Findings') {
+
                 // Determine tile row by dividing the tile's index number by the width of the 'No Sustained Findings' group
                 const tileRow = d.final_state_index / (vis.colWidths['No Sustained Findings']);
                 if (tileRow >= 62) {
+                  console.log("here",vis.blockSize,yOffset);
                     yOffset -= vis.blockSize;
                 }
                 else {
+                  console.log("there",vis.blockSize / 2,yOffset);
+
                     xOffset = vis.blockSize;
                     yOffset -= vis.blockSize / 2;
                 }
@@ -821,6 +827,8 @@ TileChart.prototype.setToolTips = function() {
                 xOffset = vis.blockSize;
                 yOffset -= vis.blockSize / 2;
             }
+
+            console.log(yOffset);
 
             return [yOffset, xOffset];
         })
@@ -871,33 +879,31 @@ TileChart.prototype.setToolTips = function() {
         // Most of this is fairly straightforward
         .html(function(d) {
 
-
-
             let tipText = "<div class='tip-text'>";
 
-            tipText += "<span class='detail-title'>Complaint Date</span>: <span class='details'>" + d3.timeFormat("%-m/%d/%y")(d.date_received) + "<br></span>"
+            tipText += "<span class='detail-title'>Complaint Date</span>: <span class='details'>" + d3.timeFormat("%-m/%d/%y")(d.date_received) + "</span>"
             if(d.incident_time) {
-                tipText += "<span class='detail-title'>Incident Date</span>: <span class='details'>" + d3.timeFormat("%-m/%d/%y")(d.incident_time) + "<br></span>"
+                tipText += "<span class='detail-title'>Incident Date</span>: <span class='details'>" + d3.timeFormat("%-m/%d/%y")(d.incident_time) + "</span>"
             }
             tipText += "<span class='detail-title'>District</span>: <span class='details'>" + d.district_occurrence + "<br></span>";
-            tipText += "<span class='detail-title'>District Median Income</span>: <span class='details'>" + d3.format("$,.0f")(d.district_income) + "<br><br></span>";
+            tipText += "<span class='detail-title'>District Median Income</span>: <span class='details'>" + d3.format("$,.0f")(d.district_income) + "</span>";
 
             if (d.officer_id) {
                 tipText += "<span class='detail-title'>Officer ID</span>: <span class='details'>" + d.officer_id + "<br></span>";
             }
             if (d.officer_initials) {
-                tipText += "<span class='detail-title'>Officer Initials</span>: <span class='details'>" + d.officer_initials + "<br></span>";
+                tipText += "<span class='detail-title'>Officer Initials</span>: <span class='details'>" + d.officer_initials + "</span>";
             }
-            tipText += "<span class='detail-title'>Officer Demographics</span>: <span class='details'>" + d.po_race + ', ' + d.po_sex + "<br></span>";
+            tipText += "<span class='detail-title'>Officer Demographics</span>: <span class='details'>" + d.po_race + ', ' + d.po_sex + "</span>";
 
             if (d.officer_prior_complaints) {
-                tipText += "<span class='detail-title'>Officer Prior Known Complaints</span>: <span class='details'>" + d.officer_prior_complaints + "<br><br></span>";
+                tipText += "<span class='detail-title'>Officer Prior Known Complaints</span>: <span class='details'>" + d.officer_prior_complaints + "</span>";
             }
             else {
-                tipText += '<br>';
+                tipText += '';
             }
 
-            tipText += "<span class='detail-title'>Complaint ID</span>: <span class='details'>" + d.complaint_id + "<br></span>";
+            tipText += "<span class='detail-title'>Complaint ID</span>: <span class='details'>" + d.complaint_id + "</span>";
             tipText += "<span class='detail-title'>Complainant Demographics</span>: <span class='details'>";
 
             // Only include demographic info that is present on the given investigation, so that we don't end up with phantom commas
@@ -906,11 +912,11 @@ TileChart.prototype.setToolTips = function() {
             }).join(', ');
 
 
-            tipText += "<br><br></span>";
+            tipText += "</span>";
 
-            tipText += "<span class='detail-title'>Complaint Type</span>: <span class='details'>" + d.general_cap_classification + "<br></span>";
+            tipText += "<span class='detail-title'>Complaint Type</span>: <span class='details'>" + d.general_cap_classification + "</span>";
             if (d.allegations_investigated) {
-                tipText += "<span class='detail-title'>Allegations Investigated</span>: <span class='details'>" + d.allegations_investigated + "<br></span>";
+                tipText += "<span class='detail-title'>Allegations Investigated</span>: <span class='details'>" + d.allegations_investigated + "</span>";
             }
 
             complaintSummaries = graphic.getComplaintSummaries();
@@ -931,7 +937,7 @@ TileChart.prototype.setToolTips = function() {
                 summaryText = calloutSummary(summaryText);
             }
 
-            tipText += "<span class='detail-title'>Complaint Summary</span>: <span class='details'>" + summaryText + "<br></span>";
+            tipText += "<span class='detail-title'>Complaint Summary</span>: <span class='details'>" + summaryText + "</span>";
             tipText += "</div>";
 
             return tipText;
@@ -940,8 +946,6 @@ TileChart.prototype.setToolTips = function() {
     // Create actual d3-tip element, which will sit hidden until tip.show() is run.
     // Due to complications with the pinned highlightTile tooltip,
     // we will occasionally clear this element altogether and recall it using the same syntax as below
-
-    console.log("here");
 
     vis.svg.call(vis.tip);
 
