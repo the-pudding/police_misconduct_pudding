@@ -178,25 +178,20 @@
 		</section>
 		<section class="step">
 				<div class="body">
-						While complaints by <span class="category-text black">Black</span> civilians are far more common in
-						Philadelphia, guilty rates more than halve to 1.3% (compared to 3% for white civilians), underscoring
-						the disparities in which Black communities are policed and a particular lack of accountability for officer
-						actions.
+					{{#each copy.sunburst4}}
+						<p>{{{value}}}</p>
+					{{/each}}
 				</div>
 		</section>
 		<section class="step" id="last-sunburst-annotation">
 				<div class="body">
-						This guilty finding rate shrinks even further for complaints filed against
-						<span class="category-text white">white</span> officers. Just 22 of the 3,698, or 0.6%, of complaints
-						against white officers filed by Black complainants result in a guilty finding. White officers are consistently
-						less likely to face disciplinary action than their peers.
-						<br><br>
-						<img class="matrix-image" inline src="outcome_table_2.svg">
-						<br><br>
-						Conversely, complaints by <span class="category-text white">white</span> civilians against
-						<span class="category-text black">Black</span> officers have one of the highest rate of guilty
-						findings of 3.8%, underscoring that the complaint process is not only more dismissive towards Black
-						complainants, but more punitive towards Black officers.
+					{{#each copy.sunburst5}}
+						<p>{{{value}}}</p>
+					{{/each}}
+					<img class="matrix-image" inline src="outcome_table_2.svg">
+					{{#each copy.sunburst6}}
+						<p>{{{value}}}</p>
+					{{/each}}
 				</div>
 		</section>
 	</div>
@@ -307,36 +302,30 @@
 	<div id="sections" class="text-column">
 		<section class="step section-change">
 				<div class="body">
-						This visual represents each disciplinary investigation as a single square.
+					{{#each copy.tilechart1}}
+						<p>{{{value}}}</p>
+					{{/each}}
 				</div>
 		</section>
 		<section class="step">
 				<div class="body">
-						As of 2019, <a target="_blank" href="https://billypenn.com/2019/07/26/after-promising-increased-transparency-philadelphia-is-redacting-police-complaint-records/">
-						Philadelphia began redacting full details of complaints</a> and replacing them with boilerplate 1-2
-						sentence summaries. Full summaries for complaints before July 2018 are provided, courtesy of Philly Declaration's
-						<a target="_blank" href="https://github.com/PhillyDeclaration/Philadelphia-Police-Accountability-Project">Police Accountability Project</a>,
-						which published datasets before the city began redacting summaries.
+					{{#each copy.tilechart2}}
+						<p>{{{value}}}</p>
+					{{/each}}
 				</div>
 		</section>
 		<section class="step">
 				<div class="body">
-						Here, the complaints have been color-coded based on the number of known prior complaints for the involved
-						officer. Note that this tabulation is based only on the complaints dating back to 2013 that have been
-						provided to the public, so these officers could have any number of additional complaints from 2012 or
-						earlier. Like many other cities, a small group of officers in Philadelphia account for a disproportionate
-						number of complaints. Over a dozen officers, <a href="https://whyy.org/articles/police-misconduct-in-philadelphia-unsealed-records-name-the-citys-most-cited-cops/">recently identified</a>,
-						have been involved in ten or more publicly-disclosed complaints.
+					{{#each copy.tilechart3}}
+						<p>{{{value}}}</p>
+					{{/each}}
 				</div>
 		</section>
 		<section class="step" id="last-tilechart-annotation">
 				<div class="body">
-						The investigations have been filtered to include only "Physical Abuse" investigations, often filed in response to
-						police use of force. As rare as guilty findings are in general, they’re even more rare in these investigations.
-						Just 5 of 1493, or 0.3%, physical abuse investigations resulted in guilty findings while just 23, or 1.5%,
-						have resulted in any kind of sustained finding
-						<a href="https://www.bjs.gov/content/pub/pdf/ccpuf.pdf">Prior research</a> involving other
-						departments has found similar patterns.
+					{{#each copy.tilechart4}}
+						<p>{{{value}}}</p>
+					{{/each}}
 				</div>
 		</section>
 	</div>
@@ -345,15 +334,9 @@
 <!-- Conclusion Text  -->
 <div class="container">
 		<div class="" id="end-text-block">
-				<p>
-						Philadelphia provides more publicly accessible data on police complaints and officer-involved shootings than
-						<a target="_blank" href="https://codeforamerica.github.io/PoliceOpenDataCensus/">almost any other major U.S. city</a>.
-						It is an important first step in holding police departments accountable, yet complaint summaries are redacted,
-						disciplinary decision processes remain vague, and anonymized IDs replace the names of officers with more
-						than a dozen recorded complaints. The lack of meaningful civilian review makes the investigative and
-						disciplinary processes even more opaque. In order to hold institutions accountable, data and processes
-						must not only be public, but also transparent.
-				</p>
+			{{#each copy.conclusion}}
+				<p>{{{value}}}</p>
+			{{/each}}
 		</div>
 
 		<div class="method">
