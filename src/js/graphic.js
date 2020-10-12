@@ -74,7 +74,7 @@ const phoneBrowsingCutoff = 1100;
 // Set color scale for outcome cateogries, to be used in sunburst, tilechart, and in text of some annotation slides
 const outcomeColors = d3.scaleOrdinal()
     .domain(["Sustained Finding", "No Sustained Findings", "Investigation Pending", "Guilty Finding", "Training/Counseling", "No Guilty Findings", "Discipline Pending"])
-    .range(['#658dc6', '#bfbfbf', '#8dc665', "#5bb6d2", "rgba(91,182,210,.6)", "rgba(91,182,210,.5)", "rgba(91,182,210,.4)"]);
+    .range(['#658dc6', '#f5ba84', '#8dc665', "#5bb6d2", "rgba(91,182,210,.6)", "rgba(91,182,210,.5)", "rgba(91,182,210,.4)"]);
 
 // ======== END GLOBALS ======== //
 
