@@ -310,6 +310,13 @@ function initSlider(maxDate) {
         }
     })
 
+    let startSliderValue = utils.monthDiff(startDate, startRange);
+    let endSliderValue = utils.monthDiff(startDate, endRange);
+    //
+    $("#slider-div")
+        .slider("values", 0, 0)
+        .slider("values", 1, endSliderValue);
+
 }
 
 // Initialize timeline play button
@@ -419,6 +426,8 @@ function step() {
     endRange = utils.monthDiff(startDate, endRange) >= maxDateOffset ? utils.addMonths(startRange, 1) : utils.addMonths(endRange, 1);
 
     let sliderValue = utils.monthDiff(startDate, endRange);
+
+    console.log("here");
     $("#slider-div")
         .slider("values", 1, sliderValue);
 
@@ -471,6 +480,9 @@ function updateTilechartDates() {
     // Update the slider
     let startSliderValue = utils.monthDiff(startDate, startRange);
     let endSliderValue = utils.monthDiff(startDate, endRange);
+
+    console.log(startSliderValue,endSliderValue);
+
     $("#slider-div")
         .slider("values", 0, startSliderValue)
         .slider("values", 1, endSliderValue);
@@ -1220,13 +1232,14 @@ function init() {
 
         maxDateOffset = utils.monthDiff(datasetDateRange[0], datasetDateRange[1]);
 
-        initSlider(maxDateOffset);
 
         officerDisciplineResults = preprocessDataset(officerDisciplineResults);
         officerDisciplineResults = officerDisciplineResults.filter(function(d) {
              return d.investigative_findings !== "Not Applicable" && !(d.investigative_findings === "Sustained Finding" && d.disciplinary_findings === "Not Applicable");
         });
         endRange = utils.addMonths(startDate, maxDateOffset);
+        initSlider(maxDateOffset);
+
         tileChart = new tileChartCreator.TileChart("#chart-area");
 
 

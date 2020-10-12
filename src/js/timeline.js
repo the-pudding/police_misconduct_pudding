@@ -9,6 +9,8 @@ let Timeline = function(_parentElement) {
 
     this.parentElement = _parentElement;
 
+
+
     this.initVis();
 }
 
@@ -48,10 +50,12 @@ Timeline.prototype.updateDimensions = function() {
 
   startDate = graphic.getStartDate();
   maxDateOffset = graphic.getMaxDateOffset();
-  
+
 	vis.x = d3.scaleTime()
     	.domain([startDate, utils.addMonths(startDate, maxDateOffset)])
     	.range([0, $('.ui-slider').outerWidth()])
+
+  console.log(vis.x.domain());
 
 	vis.timelineAxis
       .style("font-family", "Helvetica Neue,helvetica,arial,sans-serif")
