@@ -9,6 +9,7 @@ import * as markerAnimation from './marker'
 import tileChartCreator from './tileChart'
 import timelineCreator from './timeline'
 import sunburstCreator from './sunburst'
+import isMobile from "./utils/is-mobile";
 
 import "intersection-observer";
 import scrollama from "scrollama";
@@ -18,7 +19,9 @@ function resize() {}
 // ======== GLOBALS ======== //
 let officerDisciplineResults = null;
 let complaintSummaries = {};
-let phoneBrowsing = d3.select("body").classed("is-mobile");
+
+
+let phoneBrowsing = (isMobile.any() == null) ? false : true;
 let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 
 let districtGeoJSON;
@@ -73,7 +76,7 @@ const phoneBrowsingCutoff = 1100;
 // Set color scale for outcome cateogries, to be used in sunburst, tilechart, and in text of some annotation slides
 const outcomeColors = d3.scaleOrdinal()
     .domain(["Sustained Finding", "No Sustained Findings", "Investigation Pending", "Guilty Finding", "Training/Counseling", "No Guilty Findings", "Discipline Pending"])
-    .range(['#658dc6', '#bfbfbf', '#8dc665', "#5bb6d2", "rgba(91,182,210,.6)", "rgba(91,182,210,.5)", "rgba(91,182,210,.4)"]);
+    .range(['#658dc6', '#f5ba84', '#8dc665', "#5bb6d2", "rgba(91,182,210,.6)", "rgba(91,182,210,.5)", "rgba(91,182,210,.4)"]);
 
 // ======== END GLOBALS ======== //
 
@@ -606,12 +609,12 @@ function showInvestigationGroups() {
 
 
     // Hide all child (disciplinary outcome) sections
-    $("#sunburst-area path.child")
-        .css("fill-opacity", 0.3);
+    // $("#sunburst-area path.child")
+    //     .css("fill-opacity", 0.3);
 
     // Highlight only the parent (investigative outcome) sections
-    $("#sunburst-area path.parent")
-        .css("fill-opacity", 0.8);
+    // $("#sunburst-area path.parent")
+    //     .css("fill-opacity", 0.8);
 
 }
 
@@ -656,12 +659,12 @@ function highlightNotSustained() {
     artificialHover("Sustained Finding");
 
     // Hide all outcome groups
-    $("#sunburst-area path")
-        .css("fill-opacity", 0.3);
+    // $("#sunburst-area path")
+    //     .css("fill-opacity", 0.3);
 
     // Highlight only the "not sustained" section
-    $("#sunburst-area path.Sustained-Finding")
-        .css("fill-opacity", 0.8);
+    // $("#sunburst-area path.Sustained-Finding")
+    //     .css("fill-opacity", 0.8);
 
 }
 
@@ -679,12 +682,12 @@ function highlightSustained() {
     artificialHover("Sustained Finding");
 
     // Hide all outcome groups
-    $("#sunburst-area path")
-        .css("fill-opacity", 0.3);
-
+    // $("#sunburst-area path")
+    //     .css("fill-opacity", 0.3);
+    //
     // Highlight only the "not sustained" section
-    $("#sunburst-area path.Sustained-Finding")
-        .css("fill-opacity", 0.8);
+    // $("#sunburst-area path.Sustained-Finding")
+    //     .css("fill-opacity", 0.8);
 
 }
 
@@ -717,12 +720,12 @@ function showDisciplinaryGroups() {
     //     .css("fill-opacity", 0.3);
 
     // Hide all the parent (investigative outcome) sections
-    $("#sunburst-area path")
-        .css("fill-opacity", 0.3);
+    // $("#sunburst-area path")
+    //     .css("fill-opacity", 0.3);
 
     // Highlight the 'Sustained Finding' parent section, specifically
-    $("#sunburst-area path.Guilty-Finding")
-        .css("fill-opacity", 0.8);
+    // $("#sunburst-area path.Guilty-Finding")
+    //     .css("fill-opacity", 0.8);
 
     // Simulate a hover over the 'sustained finding' section
     artificialHover("Guilty Finding");

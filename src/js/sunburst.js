@@ -1,9 +1,13 @@
 import graphic from "./graphic.js"
+import isMobile from "./utils/is-mobile";
 
-let phoneBrowsing = d3.select("body").classed("is-mobile");
+let phoneBrowsing = (isMobile.any() == null) ? false : true;
+
 let officerDisciplineResults = null;
 let outcomeColors = null;
 let sunburst = null;
+
+console.log(phoneBrowsing);
 
 let Sunburst = function(_parentElement) {
     this.parentElement = _parentElement;
@@ -68,7 +72,13 @@ Sunburst.prototype.initVis = function() {
           }
           return null;
         })
-        .attr("viewBox","0 0 "+(vis.width + vis.margin.left + vis.margin.right)*1.05+" "+(vis.height + vis.margin.top + vis.margin.bottom))
+        .attr("viewBox",function(d){
+          let adjust = 1.05;
+          if(phoneBrowsing == true){
+            adjust = 1.05;
+          }
+          return "0 0 "+(vis.width + vis.margin.left + vis.margin.right)*adjust+" "+(vis.height + vis.margin.top + vis.margin.bottom);
+        })
         // .attr("width", vis.width + vis.margin.left + vis.margin.right)
         // .attr("height", vis.height + vis.margin.top + vis.margin.bottom);
 

@@ -1,8 +1,9 @@
 footer.pudding-footer
 	padding 3rem 1rem
 	border-top 4px solid $black
-	font-family $sans
+	font-family $atlas
 	margin-top 3rem
+
 
 	.footer-recirc
 		max-width 65rem
@@ -24,10 +25,11 @@ footer.pudding-footer
 					margin-right 0
 
 		.article__headline
-			font-family $sans-display
-			set-type-size(large, false)
+			font-family $atlas
+			font-size 1rem
 			line-height 1
 			font-weight 700
+			margin-top 1rem
 			padding-left 0.5rem
 			// padding-top 1rem
 
@@ -54,6 +56,7 @@ footer.pudding-footer
 			flex-wrap wrap
 			flex-direction column
 			height 12rem
+
 			+mq('bp-5')
 				flex-direction column
 
@@ -62,6 +65,7 @@ footer.pudding-footer
 				width 50%
 				margin-bottom 1rem
 				align-items center
+
 				+mq('bp-5')
 					padding-left 1rem
 
@@ -76,8 +80,13 @@ footer.pudding-footer
 					padding-top 0.1rem
 					line-height 1
 					color $gray
+					align-self center
+
 					+mq('bp-4')
-						set-type-size(large)
+						font-size .8rem
+						font-family $atlas
+
+
 
 				svg
 					fill $gray

@@ -6,6 +6,7 @@ import chosen from 'chosen-js';
 import d3Tip from "d3-tip"
 //import { officerDisciplineResults } from "./graphic"
 import graphic from "./graphic.js"
+import isMobile from "./utils/is-mobile";
 
 let officerDisciplineResults = null;
 let startRange = null;
@@ -27,7 +28,7 @@ const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeig
 const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 
 
-let phoneBrowsing = d3.select("body").classed("is-mobile");
+let phoneBrowsing = (isMobile.any() == null) ? false : true;
 if(vw < 1100) {
   phoneBrowsing = true;
 }
