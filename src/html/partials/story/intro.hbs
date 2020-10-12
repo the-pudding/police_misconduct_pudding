@@ -216,7 +216,7 @@
 				</div>
 
 				<div class="group-by-wrapper">
-						<div class="control-title" style="">Group By</div>
+						<div class="control-title" style="">Group</div>
 						<select data-placeholder="Group By" class="select" tabindex="1" id="sort-feature-select">
 								<option value="no_group">None</option>
 								<option value="complainant_race">Complainant Race</option>
@@ -340,27 +340,9 @@
 		</div>
 
 		<div class="method">
-				<hr>
-				<p>Code and data for this project lives <a href="https://github.com/the-pudding/police_misconduct_pudding">here</a>.</p>
-				<p><strong>Further Reading</strong></p>
-				<ul style=";">
-						<li><a href="http://web.archive.org/web/20180309201537/http://www.philadelphiaweekly.com/news/complaints-show-philly-police-escape-discipline-for-violent-misconduct/article_c283b3da-1bc6-11e8-bfbd-47e1758196fe.html">Complaints show Philly police escape discipline for violent misconduct (Philadelphia Weekly, 2018)</a></li>
-						<li><a href="http://web.archive.org/web/20181125134121/http://www.philadelphiaweekly.com/news/infernal-affairs-philadelphia-police-identify-officers-named-in-hundreds-of/article_01dfa250-9bb5-11e8-88d5-3b5f52c93365.html">Infernal Affairs: Philadelphia Police identify officers named in hundreds of civilian complaints (Philadelphia Weekly, 2018)</a></li>
-						<li><a href="https://www.phillypowerresearch.org/news/2018/8/10/police-accountability-an-action-guide-for-responding-to-infernal-affairs">Police Accountability: An Action Guide for Responding to "Infernal Affairs" (Philly Power Research, 2018)</a></li>
-						<li><a href="https://billypenn.com/2019/07/26/after-promising-increased-transparency-philadelphia-is-redacting-police-complaint-records/">After Promising Increased Transparency, Philadelphia is Redacting Police Complaint Records (Billy Penn, 2019)</a></li>
-						<li><a href="https://www.plainviewproject.org/data">Plainview Project</a></li>
-						<li><a href="https://whyy.org/articles/philly-police-release-hundreds-of-disciplinary-records-for-facebook-cops/">Philly Police Release Hundreds of Disciplinary Records for "Facebook Cops" (WHYY, 2019)</a></li>
-						<li><a href="https://www.phillypolice.com/forms/official-complaint-process">Philadelphia Police Complaint Process Explainer</a></li>
-						<li><a href="https://www.phila.gov/phils/Docs/Inventor/graphics/execorders/93-09.htm">Executive Order No. 9-93, Establishing Procedures for Civilian Complaints Against Police</a></li>
-						<li><a href="https://www.phillypolice.com/assets/directives/cops-w0753-pub.pdf">2015 Department of Justice Review of Use of Force Within the Philadelphia Police Department</a></li>
-				</ul>
-				<p>
-						All complaint and disciplinary data since 2015 came from the <a href="https://www.opendataphilly.org/dataset/police-complaints">City of Philadelphia Open Data Portal</a>. Pre-2015
-						data came from Philly Declaration's <a href="https://github.com/PhillyDeclaration/Philadelphia-Police-Accountability-Project">Police Accountability Project</a>. Note that some investigations/complaints
-						present in the original dataset were excluded from the visualizations if they lacked information on outcomes or involved officers. Fay Walker used U.S. Census Bureau
-						data to approximate police district median income, population, and demographics by combining census tracts.
-				</p>
-				<p>Last Updated: August 2020</p>
+			{{#each copy.method}}
+				{{{value}}}
+			{{/each}}
 		</div>
 
 

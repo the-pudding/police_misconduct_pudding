@@ -76,6 +76,11 @@ strong {
     top:0px
     margin-top 0px
     z-index -1
+  #sample-tooltip
+    @media (max-width: 600px)
+      .detail-title, .details
+        font-size 12px
+
 
 
 
@@ -159,6 +164,9 @@ p {
     display block
     box-shadow 0px 0px 7px 0px rgba(0,0,0,.12)
     border-left 2px solid #000000
+    p
+      &:last-of-type
+        margin-bottom 0
   @media (max-width: 1100px)
     padding 0
     z-index 80
@@ -499,9 +507,20 @@ select.other, span.other {
     .search-choice
       font-size 12px
       font-weight 300
+      text-align left
     .search-choice-close
       text-decoration none
       border none
+  .chosen-container-single
+    .chosen-single
+      span
+        font-size 12px
+    .chosen-results
+      display block
+      .active-result
+        font-size 12px
+        font-weight 400
+        margin-bottom .4rem
 
 
 
@@ -657,11 +676,12 @@ hr {
   }
 }
 
-#intro-text-block{
-    max-width: 600px;
-    margin: 0 auto;
-
-}
+#intro-text-block
+  max-width 600px
+  margin 0 auto
+  p
+    &:last-of-type
+      font-weight 600
 
 .logo {
     width:150px;
@@ -739,13 +759,19 @@ hr {
     justify-content: center;
 }
 
-
+.timeline-line
+  .domain
+    stroke #a0a0a0
+  .tick
+    line
+      stroke #a0a0a0
 
 .timeline-year-tick-label{
-    font-size:14px;
+    font-size:12px;
     font-weight:100;
     font-family: 'Atlas Grotesk Web';
     stroke:none;
+    fill:#808080;
 }
 
 #timeline-div{
@@ -770,15 +796,14 @@ hr {
 .group-by-wrapper, .chosen-container-div{
 }
 
-.group-by-wrapper {
-    margin-right: 1rem;
-    min-width: 355px;
-}
+.group-by-wrapper
+  margin-right 1rem
+  min-width 355px
 
 .control-title{
     align-self:center;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 300;
     margin-right:10px;
 }
 
@@ -803,11 +828,7 @@ hr {
 }
 
 .timeline-title{
-    text-align: left;
-    margin-right: 25px;
-    font-size: 14px;
-    align-self: center;
-    font-weight:500;
+  margin-right: 25px;
 }
 
 #tilechart-tile
@@ -956,9 +977,9 @@ hr {
         z-index: 100000;
     }
 
-    #chart-area {
+    #tilechart-tile #chart-area {
         display: block;
-        max-height: calc(100vh - 150px);
+        height: calc(100vh - 80px);
         width:100vw;
     }
 
