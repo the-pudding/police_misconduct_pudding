@@ -1,6 +1,8 @@
 import utils from './utils';
 import $ from 'jquery'
 import slider from 'jquery-ui/ui/widgets/slider'
+window.$ = window.jQuery = require('jquery');
+
 
 import * as markerAnimation from './marker'
 
