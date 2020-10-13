@@ -1,6 +1,8 @@
 import utils from './utils';
 import $ from 'jquery'
 import slider from 'jquery-ui/ui/widgets/slider'
+window.$ = window.jQuery = require('jquery');
+
 
 import * as markerAnimation from './marker'
 
@@ -1302,7 +1304,7 @@ function init() {
         // window.addEventListener('scroll', function(e) {
         //
         //   if(d3.select(".d3-tip").style("opacity") == 1){
-        //     d3.select(".d3-tip").style("opacity",0);
+        //     d3.select(".d3-tip").style("opacity", 0);
         //   }
         // });
 
