@@ -802,6 +802,9 @@ TileChart.prototype.setToolTips = function() {
             }
             // Based on the outcome group, the direction of the tooltip relative to the tile will change, and therefore
             // the offsets will need to change a little too, so that the tooltip is positioned next ot the tile and not on top of it
+            else if (vis.outcomeCoordinates[d.end_state][1] + vis.trueBlockWidth * Math.floor(1.0*(d.final_state_index)/vis.colWidths[d.end_state]) <= 25) {
+                yOffset += vis.blockSize;
+            }
             else if (d.end_state === 'No Guilty Findings' || d.end_state === 'Discipline Pending') {
                 yOffset -= vis.blockSize;
             }
@@ -810,11 +813,11 @@ TileChart.prototype.setToolTips = function() {
                 // Determine tile row by dividing the tile's index number by the width of the 'No Sustained Findings' group
                 const tileRow = d.final_state_index / (vis.colWidths['No Sustained Findings']);
                 if (tileRow >= 62) {
-                  console.log("here",vis.blockSize,yOffset);
+                  console.log("here",vis.blockSize, yOffset);
                     yOffset -= vis.blockSize;
                 }
                 else {
-                  console.log("there",vis.blockSize / 2,yOffset);
+                  console.log("there",vis.blockSize / 2, yOffset);
 
                     xOffset = vis.blockSize;
                     yOffset -= vis.blockSize / 2;
@@ -856,7 +859,11 @@ TileChart.prototype.setToolTips = function() {
                 }
             }
 
-            if (d.end_state === 'No Guilty Findings' || d.end_state === 'Discipline Pending') {
+            // if (d.complaint_id === "19-0464") {
+            if (vis.outcomeCoordinates[d.end_state][1] + vis.trueBlockWidth * Math.floor(1.0*(d.final_state_index)/vis.colWidths[d.end_state]) <= 25) {
+                return "s";
+            }
+            else if (d.end_state === 'No Guilty Findings' || d.end_state === 'Discipline Pending') {
                 return "n";
             }
             else if (d.end_state === 'No Sustained Findings') {
@@ -882,29 +889,29 @@ TileChart.prototype.setToolTips = function() {
 
             let tipText = "<div class='tip-text'>";
 
-            tipText += "<span class='detail-title'>Complaint Date</span>: <span class='details'>" + d3.timeFormat("%-m/%d/%y")(d.date_received) + "</span>"
+            tipText += "<span class='detail-title'>Complaint Date</span>: <span class='details'>" + d3.timeFormat("%-m/%d/%y")(d.date_received) + "</span><br>";
             if(d.incident_time) {
-                tipText += "<span class='detail-title'>Incident Date</span>: <span class='details'>" + d3.timeFormat("%-m/%d/%y")(d.incident_time) + "</span>"
+                tipText += "<span class='detail-title'>Incident Date</span>: <span class='details'>" + d3.timeFormat("%-m/%d/%y")(d.incident_time) + "</span><br>";
             }
-            tipText += "<span class='detail-title'>District</span>: <span class='details'>" + d.district_occurrence + "<br></span>";
-            tipText += "<span class='detail-title'>District Median Income</span>: <span class='details'>" + d3.format("$,.0f")(d.district_income) + "</span>";
+            tipText += "<span class='detail-title'>District</span>: <span class='details'>" + d.district_occurrence + "</span><br>";
+            tipText += "<span class='detail-title'>District Median Income</span>: <span class='details'>" + d3.format("$,.0f")(d.district_income) + "</span><br>";
 
             if (d.officer_id) {
-                tipText += "<span class='detail-title'>Officer ID</span>: <span class='details'>" + d.officer_id + "<br></span>";
+                tipText += "<span class='detail-title'>Officer ID</span>: <span class='details'>" + d.officer_id + "</span><br>";
             }
             if (d.officer_initials) {
-                tipText += "<span class='detail-title'>Officer Initials</span>: <span class='details'>" + d.officer_initials + "</span>";
+                tipText += "<span class='detail-title'>Officer Initials</span>: <span class='details'>" + d.officer_initials + "</span><br>";
             }
-            tipText += "<span class='detail-title'>Officer Demographics</span>: <span class='details'>" + d.po_race + ', ' + d.po_sex + "</span>";
+            tipText += "<span class='detail-title'>Officer Demographics</span>: <span class='details'>" + d.po_race + ', ' + d.po_sex + "</span><br>";
 
             if (d.officer_prior_complaints) {
-                tipText += "<span class='detail-title'>Officer Prior Known Complaints</span>: <span class='details'>" + d.officer_prior_complaints + "</span>";
+                tipText += "<span class='detail-title'>Officer Prior Known Complaints</span>: <span class='details'>" + d.officer_prior_complaints + "</span><br>";
             }
             else {
                 tipText += '';
             }
 
-            tipText += "<span class='detail-title'>Complaint ID</span>: <span class='details'>" + d.complaint_id + "</span>";
+            tipText += "<span class='detail-title'>Complaint ID</span>: <span class='details'>" + d.complaint_id + "</span><br>";
             tipText += "<span class='detail-title'>Complainant Demographics</span>: <span class='details'>";
 
             // Only include demographic info that is present on the given investigation, so that we don't end up with phantom commas
@@ -913,11 +920,11 @@ TileChart.prototype.setToolTips = function() {
             }).join(', ');
 
 
-            tipText += "</span>";
+            tipText += "</span><br>";
 
-            tipText += "<span class='detail-title'>Complaint Type</span>: <span class='details'>" + d.general_cap_classification + "</span>";
+            tipText += "<span class='detail-title'>Complaint Type</span>: <span class='details'>" + d.general_cap_classification + "</span><br>";
             if (d.allegations_investigated) {
-                tipText += "<span class='detail-title'>Allegations Investigated</span>: <span class='details'>" + d.allegations_investigated + "</span>";
+                tipText += "<span class='detail-title'>Allegations Investigated</span>: <span class='details'>" + d.allegations_investigated + "</span><br>";
             }
 
             complaintSummaries = graphic.getComplaintSummaries();
