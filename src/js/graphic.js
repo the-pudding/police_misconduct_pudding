@@ -1298,7 +1298,7 @@ function init() {
         // window.addEventListener('scroll', function(e) {
         //
         //   if(d3.select(".d3-tip").style("opacity") == 1){
-        //     d3.select(".d3-tip").style("opacity",0);
+        //     d3.select(".d3-tip").style("opacity", 0);
         //   }
         // });
 

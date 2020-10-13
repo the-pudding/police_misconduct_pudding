@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81d3d273-ae41-43d7-9294-2513ed7fd8eb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/js/intro-tile.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/css/story/story.styl" afterPath="$PROJECT_DIR$/src/css/story/story.styl" />
+      <change beforePath="$PROJECT_DIR$/src/html/index.hbs" afterPath="$PROJECT_DIR$/src/html/index.hbs" />
+      <change beforePath="$PROJECT_DIR$/src/js/graphic.js" afterPath="$PROJECT_DIR$/src/js/graphic.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,8 +18,8 @@
       <file leaf-file-name="tilechart.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/tilechart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="652" column="22" lean-forward="false" selection-start-line="652" selection-start-column="12" selection-end-line="652" selection-end-column="22" />
+            <state relative-caret-position="1467">
+              <caret line="1128" column="0" lean-forward="false" selection-start-line="1128" selection-start-column="0" selection-end-line="1128" selection-end-column="0" />
               <folding>
                 <element signature="e#69#97#0" expanded="true" />
                 <element signature="e#152#183#0" expanded="true" />
@@ -43,20 +45,21 @@
       <file leaf-file-name="graphic.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/graphic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="889" column="14" lean-forward="false" selection-start-line="889" selection-start-column="14" selection-end-line="889" selection-end-column="14" />
+            <state relative-caret-position="3629">
+              <caret line="339" column="20" lean-forward="false" selection-start-line="339" selection-start-column="14" selection-end-line="339" selection-end-column="20" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#149#192#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="footer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/footer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-519">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="756">
+              <caret line="85" column="24" lean-forward="false" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
               <folding>
                 <marker date="1602440034281" expanded="true" signature="1407:1572" ph="..." />
               </folding>
@@ -74,15 +77,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="story.styl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="story.styl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/css/story/story.styl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4044">
-              <caret line="825" column="0" lean-forward="false" selection-start-line="825" selection-start-column="0" selection-end-line="825" selection-end-column="0" />
-              <folding>
-                <marker date="1602522748672" expanded="true" signature="940:1270" ph="{...}" />
-                <marker date="1602522748672" expanded="true" signature="15974:16007" ph="{...}" />
-              </folding>
+            <state relative-caret-position="336">
+              <caret line="440" column="17" lean-forward="true" selection-start-line="440" selection-start-column="17" selection-end-line="440" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/html/index.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="592">
+              <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="intro.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/html/partials/story/intro.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="129" column="39" lean-forward="false" selection-start-line="129" selection-start-column="39" selection-end-line="129" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,12 +113,14 @@
     <findStrings>
       <find>.chosen</find>
       <find>chosen</find>
-      <find>section-chan</find>
       <find>phonebrow</find>
-      <find>isMob</find>
       <find>is-mo</find>
-      <find>scroll</find>
       <find>stickytool</find>
+      <find>scroll</find>
+      <find>isMob</find>
+      <find>stickytoo</find>
+      <find>section-chan</find>
+      <find>black</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -108,9 +130,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/js/main.js" />
-        <option value="$PROJECT_DIR$/src/js/graphic.js" />
-        <option value="$PROJECT_DIR$/src/css/story/story.styl" />
         <option value="$PROJECT_DIR$/src/js/tilechart.js" />
+        <option value="$PROJECT_DIR$/src/js/graphic.js" />
+        <option value="$PROJECT_DIR$/src/html/index.hbs" />
+        <option value="$PROJECT_DIR$/src/css/story/story.styl" />
       </list>
     </option>
   </component>
@@ -124,8 +147,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="133" />
-    <option name="y" value="35" />
+    <option name="x" value="132" />
+    <option name="y" value="34" />
     <option name="width" value="1621" />
     <option name="height" value="1057" />
   </component>
@@ -185,6 +208,35 @@
               <item name="police_misconduct_pudding" type="b2602c69:ProjectViewProjectNode" />
               <item name="police_misconduct_pudding" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="police_misconduct_pudding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="police_misconduct_pudding" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="police_misconduct_pudding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="police_misconduct_pudding" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="police_misconduct_pudding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="police_misconduct_pudding" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+              <item name="story" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="police_misconduct_pudding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="police_misconduct_pudding" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -232,7 +284,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="133" y="35" width="1621" height="1057" extended-state="0" />
+    <frame x="132" y="34" width="1621" height="1057" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -245,7 +298,7 @@
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.034303535" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.034303535" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -269,21 +322,31 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/css/config.styl">
+    <entry file="file://$PROJECT_DIR$/src/js/intro-tile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/story/story.styl">
+    <entry file="file://$PROJECT_DIR$/src/js/footer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4044">
-          <caret line="825" column="0" lean-forward="false" selection-start-line="825" selection-start-column="0" selection-end-line="825" selection-end-column="0" />
+        <state relative-caret-position="756">
+          <caret line="85" column="24" lean-forward="false" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
           <folding>
-            <marker date="1602522748672" expanded="true" signature="940:1270" ph="{...}" />
-            <marker date="1602522748672" expanded="true" signature="15974:16007" ph="{...}" />
+            <marker date="1602440034281" expanded="true" signature="1407:1572" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/graphic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3629">
+          <caret line="339" column="20" lean-forward="false" selection-start-line="339" selection-start-column="14" selection-end-line="339" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#149#192#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -300,8 +363,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/tilechart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="652" column="22" lean-forward="false" selection-start-line="652" selection-start-column="12" selection-end-line="652" selection-end-column="22" />
+        <state relative-caret-position="1467">
+          <caret line="1128" column="0" lean-forward="false" selection-start-line="1128" selection-start-column="0" selection-end-line="1128" selection-end-column="0" />
           <folding>
             <element signature="e#69#97#0" expanded="true" />
             <element signature="e#152#183#0" expanded="true" />
@@ -311,31 +374,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/graphic.js">
+    <entry file="file://$PROJECT_DIR$/src/css/config.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="889" column="14" lean-forward="false" selection-start-line="889" selection-start-column="14" selection-end-line="889" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/intro-tile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/footer.js">
+    <entry file="file://$PROJECT_DIR$/src/html/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-519">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1602440034281" expanded="true" signature="1407:1572" ph="..." />
-          </folding>
+        <state relative-caret-position="592">
+          <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/partials/story/intro.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="129" column="39" lean-forward="false" selection-start-line="129" selection-start-column="39" selection-end-line="129" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/story/story.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="440" column="17" lean-forward="true" selection-start-line="440" selection-start-column="17" selection-end-line="440" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
