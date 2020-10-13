@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="81d3d273-ae41-43d7-9294-2513ed7fd8eb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/css/story/story.styl" afterPath="$PROJECT_DIR$/src/css/story/story.styl" />
-      <change beforePath="$PROJECT_DIR$/src/html/index.hbs" afterPath="$PROJECT_DIR$/src/html/index.hbs" />
-      <change beforePath="$PROJECT_DIR$/src/js/graphic.js" afterPath="$PROJECT_DIR$/src/js/graphic.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -80,8 +78,8 @@
       <file leaf-file-name="story.styl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/css/story/story.styl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="440" column="17" lean-forward="true" selection-start-line="440" selection-start-column="17" selection-end-line="440" selection-end-column="17" />
+            <state relative-caret-position="222">
+              <caret line="495" column="16" lean-forward="false" selection-start-line="495" selection-start-column="16" selection-end-line="495" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -91,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/src/html/index.hbs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="592">
-              <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+              <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -112,7 +110,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>.chosen</find>
-      <find>chosen</find>
       <find>phonebrow</find>
       <find>is-mo</find>
       <find>stickytool</find>
@@ -121,6 +118,7 @@
       <find>stickytoo</find>
       <find>section-chan</find>
       <find>black</find>
+      <find>chosen</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -385,7 +383,7 @@
     <entry file="file://$PROJECT_DIR$/src/html/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
-          <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+          <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -400,8 +398,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/css/story/story.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="440" column="17" lean-forward="true" selection-start-line="440" selection-start-column="17" selection-end-line="440" selection-end-column="17" />
+        <state relative-caret-position="222">
+          <caret line="495" column="16" lean-forward="false" selection-start-line="495" selection-start-column="16" selection-end-line="495" selection-end-column="16" />
           <folding />
         </state>
       </provider>
