@@ -893,8 +893,6 @@ TileChart.prototype.setToolTips = function() {
             if(d.incident_time) {
                 tipText += "<span class='detail-title'>Incident Date</span>: <span class='details'>" + d3.timeFormat("%-m/%d/%y")(d.incident_time) + "</span><br>";
             }
-            tipText += "<span class='detail-title'>District</span>: <span class='details'>" + d.district_occurrence + ` (Median Income: ${d3.format("$,.0f")(d.district_income)})` + "</span><br>";
-
             if (d.officer_id) {
                 tipText += "<span class='detail-title'>Officer</span>: <span class='details'>" + d.officer_id + ` (${d.po_race + ', ' + d.po_sex})` +  "</span><br>";
             }
@@ -908,15 +906,17 @@ TileChart.prototype.setToolTips = function() {
             else {
                 tipText += '';
             }
-            tipText += "<span class='detail-title'>Complainant Demographics</span>: <span class='details'>";
+            tipText += "<span class='detail-title'>Complainant</span>: <span class='details'>";
 
             // Only include demographic info that is present on the given investigation, so that we don't end up with phantom commas
             tipText += [d.complainant_race, d.complainant_sex, d.complainant_age].filter(function(attr) {
                 return attr;
             }).join(', ');
 
-
             tipText += "</span><br>";
+
+            tipText += "<span class='detail-title'>District</span>: <span class='details'>" + d.district_occurrence + ` (Median Income: ${d3.format("$,.0f")(d.district_income)})` + "</span><br>";
+
             tipText += "<span class='detail-title'>Complaint ID</span>: <span class='details'>" + d.complaint_id + "</span><br><br>";
 
             tipText += "<span class='detail-title'>Complaint Type</span>: <span class='details'>" + d.general_cap_classification + "</span><br>";

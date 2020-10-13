@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="81d3d273-ae41-43d7-9294-2513ed7fd8eb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/css/story/story.styl" afterPath="$PROJECT_DIR$/src/css/story/story.styl" />
       <change beforePath="$PROJECT_DIR$/src/js/tilechart.js" afterPath="$PROJECT_DIR$/src/js/tilechart.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,16 +14,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tilechart.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tilechart.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/tilechart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1014">
-              <caret line="937" column="0" lean-forward="true" selection-start-line="937" selection-start-column="0" selection-end-line="937" selection-end-column="0" />
+            <state relative-caret-position="484">
+              <caret line="918" column="0" lean-forward="true" selection-start-line="918" selection-start-column="0" selection-end-line="918" selection-end-column="0" />
               <folding>
                 <element signature="e#69#97#0" expanded="true" />
                 <element signature="e#152#183#0" expanded="true" />
-                <marker date="1602611709374" expanded="true" signature="44148:44188" ph="..." />
-                <marker date="1602611709374" expanded="true" signature="50448:50479" ph="..." />
+                <marker date="1602621343559" expanded="true" signature="44135:44175" ph="..." />
+                <marker date="1602621343559" expanded="true" signature="50435:50466" ph="..." />
               </folding>
             </state>
           </provider>
@@ -77,7 +76,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="story.styl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="story.styl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/css/story/story.styl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="370">
@@ -127,8 +126,8 @@
       <find>isMob</find>
       <find>scroll</find>
       <find>complainant de</find>
-      <find>d3-tip</find>
       <find>subb</find>
+      <find>d3-tip</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -140,8 +139,8 @@
         <option value="$PROJECT_DIR$/src/js/main.js" />
         <option value="$PROJECT_DIR$/src/js/graphic.js" />
         <option value="$PROJECT_DIR$/src/html/index.hbs" />
-        <option value="$PROJECT_DIR$/src/js/tilechart.js" />
         <option value="$PROJECT_DIR$/src/css/story/story.styl" />
+        <option value="$PROJECT_DIR$/src/js/tilechart.js" />
       </list>
     </option>
   </component>
@@ -377,19 +376,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/tilechart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1014">
-          <caret line="937" column="0" lean-forward="true" selection-start-line="937" selection-start-column="0" selection-end-line="937" selection-end-column="0" />
-          <folding>
-            <element signature="e#69#97#0" expanded="true" />
-            <element signature="e#152#183#0" expanded="true" />
-            <marker date="1602611709374" expanded="true" signature="44148:44188" ph="..." />
-            <marker date="1602611709374" expanded="true" signature="50448:50479" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/html/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -411,6 +397,19 @@
         <state relative-caret-position="370">
           <caret line="1128" column="22" lean-forward="false" selection-start-line="1128" selection-start-column="22" selection-end-line="1128" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/tilechart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="918" column="0" lean-forward="true" selection-start-line="918" selection-start-column="0" selection-end-line="918" selection-end-column="0" />
+          <folding>
+            <element signature="e#69#97#0" expanded="true" />
+            <element signature="e#152#183#0" expanded="true" />
+            <marker date="1602621343559" expanded="true" signature="44135:44175" ph="..." />
+            <marker date="1602621343559" expanded="true" signature="50435:50466" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
