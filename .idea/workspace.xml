@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81d3d273-ae41-43d7-9294-2513ed7fd8eb" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/css/story/story.styl" afterPath="$PROJECT_DIR$/src/css/story/story.styl" />
       <change beforePath="$PROJECT_DIR$/src/js/tilechart.js" afterPath="$PROJECT_DIR$/src/js/tilechart.js" />
     </list>
@@ -14,16 +15,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tilechart.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tilechart.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/tilechart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="919" column="131" lean-forward="false" selection-start-line="919" selection-start-column="131" selection-end-line="919" selection-end-column="131" />
+            <state relative-caret-position="-1014">
+              <caret line="937" column="0" lean-forward="true" selection-start-line="937" selection-start-column="0" selection-end-line="937" selection-end-column="0" />
               <folding>
                 <element signature="e#69#97#0" expanded="true" />
                 <element signature="e#152#183#0" expanded="true" />
-                <marker date="1602610392214" expanded="true" signature="43617:43657" ph="..." />
-                <marker date="1602610392214" expanded="true" signature="49917:49948" ph="..." />
+                <marker date="1602611709374" expanded="true" signature="44148:44188" ph="..." />
+                <marker date="1602611709374" expanded="true" signature="50448:50479" ph="..." />
               </folding>
             </state>
           </provider>
@@ -76,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="story.styl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="story.styl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/css/story/story.styl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="342" column="15" lean-forward="false" selection-start-line="342" selection-start-column="15" selection-end-line="342" selection-end-column="15" />
+            <state relative-caret-position="370">
+              <caret line="1128" column="22" lean-forward="false" selection-start-line="1128" selection-start-column="22" selection-end-line="1128" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -89,8 +90,8 @@
       <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/html/index.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+            <state relative-caret-position="595">
+              <caret line="60" column="28" lean-forward="false" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -99,8 +100,8 @@
       <file leaf-file-name="intro.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/html/partials/story/intro.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="129" column="39" lean-forward="false" selection-start-line="129" selection-start-column="39" selection-end-line="129" selection-end-column="39" />
+            <state relative-caret-position="223">
+              <caret line="132" column="50" lean-forward="false" selection-start-line="132" selection-start-column="50" selection-end-line="132" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -121,11 +122,13 @@
       <find>end-text</find>
       <find>19-04</find>
       <find>br&gt;</find>
-      <find>d3-tip</find>
       <find>35</find>
       <find>&lt;= 25</find>
       <find>isMob</find>
       <find>scroll</find>
+      <find>complainant de</find>
+      <find>d3-tip</find>
+      <find>subb</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,8 +140,8 @@
         <option value="$PROJECT_DIR$/src/js/main.js" />
         <option value="$PROJECT_DIR$/src/js/graphic.js" />
         <option value="$PROJECT_DIR$/src/html/index.hbs" />
-        <option value="$PROJECT_DIR$/src/css/story/story.styl" />
         <option value="$PROJECT_DIR$/src/js/tilechart.js" />
+        <option value="$PROJECT_DIR$/src/css/story/story.styl" />
       </list>
     </option>
   </component>
@@ -152,8 +155,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="132" />
-    <option name="y" value="34" />
+    <option name="x" value="111" />
+    <option name="y" value="134" />
     <option name="width" value="1621" />
     <option name="height" value="1057" />
   </component>
@@ -289,7 +292,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="132" y="34" width="1621" height="1057" extended-state="0" />
+    <frame x="111" y="134" width="1621" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -345,38 +348,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/html/index.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/html/partials/story/intro.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="129" column="39" lean-forward="false" selection-start-line="129" selection-start-column="39" selection-end-line="129" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/config.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/story/story.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="342" column="15" lean-forward="false" selection-start-line="342" selection-start-column="15" selection-end-line="342" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -398,16 +369,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/config.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/tilechart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="919" column="131" lean-forward="false" selection-start-line="919" selection-start-column="131" selection-end-line="919" selection-end-column="131" />
+        <state relative-caret-position="-1014">
+          <caret line="937" column="0" lean-forward="true" selection-start-line="937" selection-start-column="0" selection-end-line="937" selection-end-column="0" />
           <folding>
             <element signature="e#69#97#0" expanded="true" />
             <element signature="e#152#183#0" expanded="true" />
-            <marker date="1602610392214" expanded="true" signature="43617:43657" ph="..." />
-            <marker date="1602610392214" expanded="true" signature="49917:49948" ph="..." />
+            <marker date="1602611709374" expanded="true" signature="44148:44188" ph="..." />
+            <marker date="1602611709374" expanded="true" signature="50448:50479" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/index.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="60" column="28" lean-forward="false" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/partials/story/intro.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="132" column="50" lean-forward="false" selection-start-line="132" selection-start-column="50" selection-end-line="132" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/story/story.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="1128" column="22" lean-forward="false" selection-start-line="1128" selection-start-column="22" selection-end-line="1128" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>

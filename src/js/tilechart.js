@@ -945,6 +945,11 @@ TileChart.prototype.setToolTips = function() {
             tipText += "<span class='detail-title'>Complaint Summary</span>: <span class='details'>" + summaryText + "</span>";
             tipText += "</div>";
 
+            if (phoneBrowsing === true) {
+              let closeSVG = '<svg class="close-tooltip" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+              tipText += closeSVG;
+            }
+
             return tipText;
         });
 
@@ -953,8 +958,12 @@ TileChart.prototype.setToolTips = function() {
     // we will occasionally clear this element altogether and recall it using the same syntax as below
 
     vis.svg.call(vis.tip);
+    $(".close-tooltip")
+      .on("click", () => {
+        vis.tip.hide();
+      })
 
-}
+};
 
 // Highlight particular sections of the text in the designated highlightTile, which will enlarge/trigger a tooltip on the
 // 'Stories Behind the Complaints' annotation if its in the set of filtered tiles
