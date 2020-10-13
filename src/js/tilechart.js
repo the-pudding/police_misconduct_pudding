@@ -1115,38 +1115,39 @@ TileChart.prototype.updateCounts = function(outcome) {
     return outputString;
 };
 
-if(!phoneBrowsing){
-  $(window).on("scroll", function () {
+// if(!phoneBrowsing){
+$(window).on("scroll", function () {
 
-     // d3.select("#annotation-tooltip")
-     //      .style("opacity", 0)
-     //      .style("z-index", -1);
+   // d3.select("#annotation-tooltip")
+   //      .style("opacity", 0)
+   //      .style("z-index", -1);
 
-     // d3.select("#category-tooltip")
-     //     .style("opacity", 0);
+   // d3.select("#category-tooltip")
+   //     .style("opacity", 0);
 
-     if (stickyTooltip === false && tooltipVisible === true) {
 
-       console.log("firing");
+   if (stickyTooltip === false && tooltipVisible === true) {
 
-         $(".d3-tip")
-             .css("opacity", 0.0);
+     console.log("firing");
 
-         tooltipVisible = false;
+       $(".d3-tip")
+           .css("opacity", 0.0);
 
-         tileChart = graphic.getTileChart();
+       tooltipVisible = false;
 
-         tileChart.svg.selectAll("rect.complaint-box")
-              .attr("fill", d => {
-                  if (tileChart.representedAttribute === 'no_group') {
-                      return outcomeColors(d.end_state);
-                  }
-                  else {
-                      return tileChart.color(d[tileChart.representedAttribute]);
-                  }
-              });
-     }
-  });
-}
+       tileChart = graphic.getTileChart();
+
+       tileChart.svg.selectAll("rect.complaint-box")
+            .attr("fill", d => {
+                if (tileChart.representedAttribute === 'no_group') {
+                    return outcomeColors(d.end_state);
+                }
+                else {
+                    return tileChart.color(d[tileChart.representedAttribute]);
+                }
+            });
+   }
+});
+// }
 
 export default { TileChart };
