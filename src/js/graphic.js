@@ -491,7 +491,7 @@ function updateTilechartDates() {
 
 // Used to simulate a mousehover (tap on mobile) over a section of the sunburst
 function artificialHover(outcomeName) {
-    $("#sunburst-area path").removeAttr('style');
+    // $("#sunburst-area path").removeAttr('style');
 
     // Find the element corresponding with the outcomeName parameter
     const guiltyFindingElement = $(`path#${outcomeName.replace(/ /g, "-")}`)[0];
@@ -688,6 +688,10 @@ function highlightSustained() {
     sunburst.displaySecondLevel = false;
     sunburst.wrangleData();
 
+    d3.select("#sunburst-area").selectAll("path")
+        .style("fill-opacity", null);
+
+
     // Simulate a hover over the 'sustained finding' section
     artificialHover("Sustained Finding");
 
@@ -704,6 +708,8 @@ function highlightSustained() {
 
 // Activate function: triggers on annotation "Disciplinary Outcomes"
 function showDisciplinaryGroups() {
+
+  console.log("here");
     sunburst.displaySecondLevel = true;
 
     $("#sunburst-select-text")
@@ -730,12 +736,12 @@ function showDisciplinaryGroups() {
     //     .css("fill-opacity", 0.3);
 
     // Hide all the parent (investigative outcome) sections
-    // $("#sunburst-area path")
-    //     .css("fill-opacity", 0.3);
+    d3.select("#sunburst-area").selectAll("path")
+        .style("fill-opacity", 0.3);
 
     // Highlight the 'Sustained Finding' parent section, specifically
-    // $("#sunburst-area path.Guilty-Finding")
-    //     .css("fill-opacity", 0.8);
+    d3.select("#Guilty-Finding")
+        .style("fill-opacity", null);
 
     // Simulate a hover over the 'sustained finding' section
     artificialHover("Guilty Finding");
