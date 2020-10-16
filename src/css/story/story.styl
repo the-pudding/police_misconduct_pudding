@@ -992,6 +992,7 @@ hr {
         /*max-width: 300px;*/
         width: calc(100vw - 50px);
         /*left: 30px;*/
+        z-index: 50;
     }
 
     .d3-tip::after {
@@ -1000,8 +1001,13 @@ hr {
 
     .close-tooltip {
       position: absolute;
-      right: 15px;
-      top: 15px;
+      max-width: 25px;
+      right: 5%;
+      top: 5%;
+    }
+
+    .step {
+      z-index: 100;
     }
 
     .step.phantom {
@@ -1125,8 +1131,8 @@ hr {
          font-size: 12px;
      }
 
-     .tip-text {
-         font-size: 11px;
+     .d3-tip .tip-text {
+         font-size: 12px;
      }
 
      .spacer {

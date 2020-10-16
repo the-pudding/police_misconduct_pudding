@@ -1248,8 +1248,6 @@ function init() {
 
         tileChart = new tileChartCreator.TileChart("#chart-area");
 
-
-
         if (phoneBrowsing === false) {
             timeline = new timelineCreator.Timeline("#slider-div");
         }
@@ -1313,6 +1311,8 @@ function init() {
 
     Promise.all(summaryPromise).then((allData) => {
         complaintSummaries = allData[0];
+
+        console.log(d3.selectAll("rect.complaint-box"));
     })
 }
 

@@ -524,7 +524,7 @@ TileChart.prototype.updateVis = function() {
                 .style("stroke", "#f9f9f9")
                 .style("stroke-width", () => phoneBrowsing === true ? "1px" : "1px")
                 // Mouseenter/mouseout callback functions will trigger/remove tooltips for given investigation tile
-                .on("mouseenter", function(d,i){
+                .on("mouseenter", function(d,i,n){
                     // If there's a highlighted tile with a pinned tooltip, we'll be extra cautious about removing that
                     // before making further tooltip changes
                     if (vis.pinnedTooltip === true) {
@@ -535,14 +535,42 @@ TileChart.prototype.updateVis = function() {
                         vis.pinnedTooltip = false;
                     }
                     if (phoneBrowsing === true) {
-                        vis.svg.selectAll("rect.complaint-box").filter(x => x.discipline_id === d.discipline_id).attr("fill", "black");
+                        vis.svg.selectAll("rect.complaint-box").filter(x => x.discipline_id === d.discipline_id && d.complaint_id !== "13-0541").attr("fill", "black");
                     }
 
 
                     vis.tip.show(d,this);
 
+                    if (phoneBrowsing === true) {
+
+                        let tooltip = $(".d3-tip");
+                        let tooltipHeight = tooltip[0].getBoundingClientRect().height;
+
+                        tooltip
+                          // .css("position", "fixed")
+                            .css("top", () => n[i].getBBox().y > vh/2 ?
+                                n[i].getBBox().y - tooltipHeight - 2 :
+                                n[i].getBBox().y + vis.blockSize + 2);
+
+                        document.getElementById("chart-area").appendChild(d3.select(".d3-tip").node());
+
+                        $(".close-tooltip")
+                            .css("top", "15px")
+                            .css("right", "15px")
+                            .on("click", () => {
+                                console.log("clicked");
+                                vis.tip.hide();
+                            })
+                    }
+
                     tooltipVisible = true;
                     stickyTooltip = false;
+
+                    $(".close-tooltip")
+                      .on("click", () => {
+                        console.log("clicked");
+                        vis.tip.hide();
+                      })
                 })
                 .on("mouseout", (d) => {
                     $(".d3-tip")
@@ -675,10 +703,22 @@ TileChart.prototype.highlightTile = function(disciplineID) {
             // or non-standard filters and the tile is on the far left, in which case it'll default back to the "east" orientation
 
             if (phoneBrowsing === true) {
+                let tileY = tileChart.featuredTile.node().getBBox().y;
+
                 highlightTip
                     .css("position", "fixed")
-                    .css("top", tileY + tileHeight + 2)
+                    .css("top", tileY + tileHeight + 2);
                     // .css("left", "25px");
+
+                    document.getElementById("chart-area").appendChild(d3.select(".d3-tip").node());
+
+                    $(".close-tooltip")
+                        .css("top", "15px")
+                        .css("right", "15px")
+                        .on("click", () => {
+                            console.log("clicked");
+                            vis.tip.hide();
+                        })
             }
             else {
                 highlightTip
@@ -755,6 +795,8 @@ TileChart.prototype.setToolTips = function() {
         .attr('class', 'd3-tip')
         // Offset can be a little complicated due to sticky positioning of the tilechart-tile (only seems to apply on Chrome)
         .offset(d => {
+            // console.log(d3.event)
+            // console.log(vis.outcomeCoordinates[d.end_state][1] + vis.trueBlockWidth * ~~(d.final_state_index/vis.colWidths[d.end_state]));
             // Find offset of the top of the tilechart-wrapper from the top of the page (this will vary based on window size)
             const tileOffset = $("#tilechart-wrapper")[0].getBoundingClientRect().y;
             // Find offset from top of page to tilechart-tile
@@ -765,6 +807,9 @@ TileChart.prototype.setToolTips = function() {
             // After the tilechart has fallen into fixed, position, this will be the difference between the trueMarginSize and the tileOffset
             // Without this offset, the tooltip would render in a position as if the the tilechart is in its original, pre-scroll location
             let yOffset = trueMarginSize - Math.min(trueMarginSize, tileOffset);
+            if (phoneBrowsing === true) {
+                yOffset = 0;
+            }
             let xOffset = 0;
 
             // If browser isn't Chrome, don't worry about the yOffset issue, it doesn't seem to try to render the tooltip in the original
@@ -832,9 +877,18 @@ TileChart.prototype.setToolTips = function() {
                 yOffset -= vis.blockSize / 2;
             }
 
-            console.log(yOffset);
+            // const tileY = vis.outcomeCoordinates[d.end_state][1] + vis.trueBlockWidth * ~~(d.final_state_index/vis.colWidths[d.end_state]);
+            if (phoneBrowsing === true) {
+                let yVal = d3.selectAll("rect.complaint-box").filter(i => d.discipline_id === i.discipline_id).node().getBBox().y;
+                console.log(yVal, yOffset);
+                return [yVal + yOffset, xOffset];
+                // return [d3.event.clientY + yOffset, xOffset];
+            }
+            else {
+                return [yOffset, xOffset];
+            }
 
-            return [yOffset, xOffset];
+
         })
         // The diretion of the tooltip will vary based on where the tile is located (due to screen size constraints and some very large tooltips)
         // Generally, this is just determined by the outcome group it sits in, with those near the bottom of the screen triggering 'north' tooltips
@@ -958,11 +1012,7 @@ TileChart.prototype.setToolTips = function() {
     // we will occasionally clear this element altogether and recall it using the same syntax as below
 
     vis.svg.call(vis.tip);
-    $(".close-tooltip")
-      .on("click", () => {
-        vis.tip.hide();
-      })
-
+    // document.getElementById("chart-area").appendChild(d3.select(".d3-tip").node())
 };
 
 // Highlight particular sections of the text in the designated highlightTile, which will enlarge/trigger a tooltip on the
