@@ -103,7 +103,7 @@ Sunburst.prototype.initVis = function() {
 
     // Label in center of sunburst with the percentage value of the hovered section
     vis.selectedValLabel = vis.g.append("text")
-        .attr("transform", "translate(" + (vis.radius - vis.radiusOffset/2) + "," + (vis.radius - 38) + ")")
+        .attr("transform", "translate(" + (vis.radius - vis.radiusOffset/2) + "," + (vis.radius - 39) + ")")
         .attr("id", "sunburst-center-label-text")
         .attr("text-anchor", "middle")
         .text("");
