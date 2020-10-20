@@ -102,6 +102,13 @@ Sunburst.prototype.initVis = function() {
     vis.format = d3.format(",d");
 
     // Label in center of sunburst with the percentage value of the hovered section
+    vis.selectedValLabel = vis.g.append("text")
+        .attr("transform", "translate(" + (vis.radius - vis.radiusOffset/2) + "," + (vis.radius - 38) + ")")
+        .attr("id", "sunburst-center-label-text")
+        .attr("text-anchor", "middle")
+        .text("");
+
+    // Label in center of sunburst with the percentage value of the hovered section
     vis.selectedValPct = vis.g.append("text")
         .attr("transform", "translate(" + (vis.radius - vis.radiusOffset/2) + "," + vis.radius + ")")
         .attr("id", "sunburst-val-pct-text")
@@ -256,7 +263,7 @@ Sunburst.prototype.addSunburstSlices = function() {
     vis.plotAreas
         .enter()
         .append("path")
-        .attr("parent", function(d) {
+        .attr("parent", d => {
             if(d.depth > 1) {
                 // If this is a child outcome (disciplinary), add its parent
                 return d.parent.data.name.replace(" ", "-");
@@ -266,7 +273,7 @@ Sunburst.prototype.addSunburstSlices = function() {
                 return d.data.name;
             }
         })
-        .attr("class", function(d) {
+        .attr("class", d => {
             if(d.depth > 1) {
                 return "sunburst-segment child";
             }
@@ -274,23 +281,24 @@ Sunburst.prototype.addSunburstSlices = function() {
                 return "sunburst-segment parent " + d.data.name.replace(/ /g, "-");
             }
         })
-        .attr("id", function(d) {
+        .attr("name", d => d.data.name)
+        .attr("id", d => {
             return d.data.name.replace(/ /g, "-");
         })
-        .attr("fill", function(d) {
+        .attr("fill", d => {
             return outcomeColors(d.data.name);
         })
-        .attr("value", function(d) {
+        .attr("value",d => {
             return d.value;
         })
         .attr("d", vis.arc)
         //.attr("fill-opacity", 0.6)
         .attr("transform", "translate(" + (vis.radius-(vis.radiusOffset / 2)) + "," + (vis.radius) + ")")
-        .on("mouseover", function(d,i,n) {
+        .on("mouseover", (d,i,n) => {
             $("#sunburst-area path").removeAttr('style');
             vis.mouseover(d.value, n[i]);
         })
-        .on("mouseout", function() {
+        .on("mouseout", () => {
             vis.mouseout();
         })
         .transition("change-slices")
@@ -300,7 +308,7 @@ Sunburst.prototype.addSunburstSlices = function() {
             .attrTween("d", arcTweenPath)
         // We'll use the previousAngles dict initialized earlier to store angles.
         // This is going to help the arcTweenPath function when it needs to re-add a slice that wasn't present in a previous filtering
-        .each(function(d) {
+        .each(d => {
             vis.previousAngles[d.data.name] = vis.previousAngles[d.data.name] ?
                 {'x0': d.x0, 'x1': d.x0, 'y0': vis.previousAngles[d.data.name].y0, 'y1': vis.previousAngles[d.data.name].y1 }
                 : {'x0': d.x0, 'x1': d.x1, 'y0': 0, 'y1': 0}
@@ -494,8 +502,10 @@ Sunburst.prototype.mouseout = function() {
 
     vis.mousedOverElement = null;
 
-    //$(".sunburst-segment").attr("fill-opacity", 0.6);
+    $(".sunburst-segment").attr("fill-opacity", 0.8);
 
+    vis.selectedValLabel
+        .text("");
     vis.selectedValPct
         .text("");
     vis.selectedValTotals
@@ -506,17 +516,21 @@ Sunburst.prototype.mouseout = function() {
 Sunburst.prototype.mouseover = function(value, element) {
     const vis = this;
 
+    let parentName = $(element).attr("parent");
+    let elementName = $(element).attr("name");
+
     vis.mousedOverElement = element;
 
-    // $(".sunburst-segment").attr("fill-opacity", 0.2);
+    $(".sunburst-segment").attr("fill-opacity", 0.2);
+
+    vis.selectedValLabel
+        .text(elementName);
 
     vis.selectedValPct
         .text(d3.format(".1%")(value/vis.totalSize));
 
     vis.selectedValTotals
         .text(`(${d3.format(",")(value)} of ${d3.format(",")(vis.totalSize)} investigations)`)
-
-    let parentName = $(element).attr("parent");
 
     $(element).attr("fill-opacity", 0.8);
     $("." + parentName).attr("fill-opacity", 0.8);

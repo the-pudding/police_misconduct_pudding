@@ -533,7 +533,7 @@ function displayIntroText() {
     // Reset highlighting on complaint
     $("#sample-tooltip .detail-title, #sample-tooltip .outcome")
         .css("background", "none")
-        .css("font-weight", "unset")
+        // .css("font-weight", "unset")
         .css("background-color", "rgba(28, 148, 196, 0.0)");
 }
 
@@ -563,7 +563,7 @@ function highlightComplaintDetails() {
             'padding_bottom':'.1em',
             "thickness":'1.2em',
             "duration":'1s',
-            "font_weight":'normal',
+            "font_weight":'bold',
             "function":'ease',
             "repeat": false
         })
