@@ -112,6 +112,7 @@ const textAnnotations = {
     'supported (or other violations were discovered during the course of the investigation).',
     'investigation': 'Note that a single complaint can result in one or many disciplinary investigations against one or many officers.',
     'highlighted term': 'Even this one!',
+    // 'civilian oversight board': 'This election, Philadelphia voters will vote on whether to establish a fully independent Citizens Police Oversight Commission',
 
     'sustained finding': "An Internal Affairs investigation determined that one or more of the allegations filed in the complaint were " +
     "supported (or other violations were discovered during the course of the investigation). These are then sent to the " +
@@ -153,9 +154,9 @@ const textAnnotations = {
     "for at least five years.",
 
     "civilian oversight board": "While Philadelphia technically has a civilian police oversight board, the Police Advisory Commission, " +
-    "it is underpowered and underfunded. While they may provide assistance to complainants thoughtout the process, they hold " +
-    "no decision-making power in the investigation or discipline of officers. A ballot measure to establish a new Citizen Police " +
-    "Oversight Commission is on the ballot in November."
+    "it is widely considered underpowered and underfunded. They often provide assistance to complainants throughout the process, but they hold " +
+    "no decision-making power in the investigation or discipline of officers. This election, Philadelphia voters will vote on whether " +
+    "to establish a new, fully independent Citizens Police Oversight Commission"
 };
 
 // jQuery to move div and create pop-up tooltip with annotation
@@ -566,7 +567,7 @@ function highlightComplaintDetails() {
             "font_weight":'bold',
             "function":'ease',
             "repeat": false
-        })
+        });
 
 
     // Reset highlighting on complaint outcome
@@ -632,7 +633,7 @@ function showInvestigationGroups() {
 
 
 // Activate function: triggers on annotation "Discarded Complaints"
-function highlightNotSustained() {
+function highlightSustained() {
 
     // If on mobile, the sunburst entrance happens here
     if (phoneBrowsing === true && sunburstEntered === false) {
@@ -682,30 +683,30 @@ function highlightNotSustained() {
 
 
 // Activate function: triggers on annotation "Sustained Complaints"
-function highlightSustained() {
-    // $("#sunburst-static-text")
-    //     .clearQueue()
-    //     .animate({ 'top': '80px'}, 1000)
-
-    sunburst.displaySecondLevel = false;
-    sunburst.wrangleData();
-
-    d3.select("#sunburst-area").selectAll("path")
-        .style("fill-opacity", null);
-
-
-    // Simulate a hover over the 'sustained finding' section
-    artificialHover("Sustained Finding");
-
-    // Hide all outcome groups
-    // $("#sunburst-area path")
-    //     .css("fill-opacity", 0.3);
-    //
-    // Highlight only the "not sustained" section
-    // $("#sunburst-area path.Sustained-Finding")
-    //     .css("fill-opacity", 0.8);
-
-}
+// function highlightSustained() {
+//     // $("#sunburst-static-text")
+//     //     .clearQueue()
+//     //     .animate({ 'top': '80px'}, 1000)
+//
+//     sunburst.displaySecondLevel = false;
+//     sunburst.wrangleData();
+//
+//     d3.select("#sunburst-area").selectAll("path")
+//         .style("fill-opacity", null);
+//
+//
+//     // Simulate a hover over the 'sustained finding' section
+//     artificialHover("Sustained Finding");
+//
+//     // Hide all outcome groups
+//     // $("#sunburst-area path")
+//     //     .css("fill-opacity", 0.3);
+//     //
+//     // Highlight only the "not sustained" section
+//     // $("#sunburst-area path.Sustained-Finding")
+//     //     .css("fill-opacity", 0.8);
+//
+// }
 
 
 // Activate function: triggers on annotation "Disciplinary Outcomes"
@@ -1139,15 +1140,12 @@ function setDynamicPadding(tileID, startIndex, endIndex) {
 function setActivateFunctions() {
     scrollerDivObjects = $(scrollerDiv);
 
-    // Intro tile functions
-    //activateFunctions[0] = displayIntroText;
-
     // Sample complaint tile functions
     activateFunctions[0] = highlightComplaintDetails;
     activateFunctions[1] = highlightComplaintOutcome;
 
     // Sunburst tile functions
-    activateFunctions[2] = highlightNotSustained;
+    activateFunctions[2] = highlightSustained;
     activateFunctions[3] = showDisciplinaryGroups;
     activateFunctions[4] = guiltyWhiteComplainant;
     activateFunctions[5] = guiltyBlackComplainant;
@@ -1158,7 +1156,6 @@ function setActivateFunctions() {
     activateFunctions[7] = tilechartEntrance;
     activateFunctions[8] = highlightTile;
     activateFunctions[9] = showTilechartByPriorComplaints;
-    // activateFunctions[11] = highlightOverduePending;
     activateFunctions[10] = showComplaintTypes;
 
     // End text functions
