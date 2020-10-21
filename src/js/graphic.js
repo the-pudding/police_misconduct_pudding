@@ -672,12 +672,12 @@ function highlightSustained() {
     artificialHover("Sustained Finding");
 
     // Hide all outcome groups
-    // $("#sunburst-area path")
-    //     .css("fill-opacity", 0.3);
+    $("#sunburst-area path")
+        .css("fill-opacity", 0.3);
 
     // Highlight only the "not sustained" section
-    // $("#sunburst-area path.Sustained-Finding")
-    //     .css("fill-opacity", 0.8);
+    $("#sunburst-area path.Sustained-Finding")
+        .css("fill-opacity", 0.8);
 
 }
 
