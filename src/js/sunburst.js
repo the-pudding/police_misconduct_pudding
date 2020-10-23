@@ -390,7 +390,8 @@ Sunburst.prototype.addLabelShadows = function() {
         .append("text")
         .attr("class", "sunburst-chart-label-shadows")
         .style("stroke",function(d){
-          return outcomeColors(d.data.name);
+          let color = d3.color(outcomeColors(d.data.name)).brighter(2);
+          return color;
         })
         .attr("opacity", d => vis.displaySecondLevel === false && d.depth > 1 ? 0.0 : 1.0)
         // The entrance of a 'new' label will be different if it is genuinely new vs. if it just didn't appear in the last filtering
@@ -514,6 +515,50 @@ Sunburst.prototype.mouseout = function() {
 
 // Fade all but the current sequence, and display center text
 Sunburst.prototype.mouseover = function(value, element) {
+
+    if(d3.select(element).attr("parent") == "Sustained-Finding"){
+
+      d3.selectAll(".sunburst-chart-labels")
+        .style("opacity",.5)
+
+      d3.selectAll(".sunburst-chart-label-shadows")
+        .style("opacity",.5)
+
+      d3.select("#Guilty-Finding")
+          .style("fill-opacity", null)
+          .style("stroke-width","2px")
+          .style("stroke","black")
+          ;
+
+      d3.select("#Sustained-Finding")
+          // .attr("fill-opacity", 1)
+          .style("stroke-width","2px")
+          .style("stroke","black")
+          ;
+
+      d3.selectAll(".sunburst-chart-labels")
+        .style("opacity",function(d){
+          if(d3.select(this).text() == "Investigation Pending" || d3.select(this).text() == "No Sustained Findings"){
+            return .4
+          }
+          return null;
+        })
+
+      d3.selectAll(".sunburst-chart-label-shadows")
+        .style("opacity",function(d){
+          if(d3.select(this).text() == "Investigation Pending" || d3.select(this).text() == "No Sustained Findings"){
+            return .4
+          }
+          return null;
+        })
+    } else {
+      d3.selectAll(".sunburst-chart-labels")
+        .style("opacity",null)
+
+      d3.selectAll(".sunburst-chart-label-shadows")
+        .style("opacity",null)
+    }
+
     const vis = this;
 
     let parentName = $(element).attr("parent");

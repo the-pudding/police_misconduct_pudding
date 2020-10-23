@@ -593,8 +593,8 @@ TileChart.prototype.updateVis = function() {
                 })
                 // After initializing in the top center of the visual, tile will transition to correct outcome group and correct position within that outcome group
                 // using the outcomeCoordinates dict and the final_state_index assigned in the wrangleData() function for its offset within that tile group
-                .transition()
-                    .duration(600)
+                // .transition()
+                //     .duration(600)
                     // .delay(0)
                     .attr("x",  d => vis.outcomeCoordinates[d.end_state][0] + vis.trueBlockWidth * (d.final_state_index%vis.colWidths[d.end_state]))
                     .attr("y", d => vis.outcomeCoordinates[d.end_state][1] + vis.trueBlockWidth * ~~(d.final_state_index/vis.colWidths[d.end_state]))
@@ -608,8 +608,8 @@ TileChart.prototype.updateVis = function() {
     // there's a level or re-arranging that needs to take place among existing tiles whenever parameters change and new tile enter/leave.
     // This process was kind of a nightmare to sort out, but this works!
     vis.tilechart
-        .transition()
-            .duration(600)
+        // .transition()
+        //     .duration(600)
             // .delay(0)
                 .attr("x",  d => vis.outcomeCoordinates[d.end_state][0] + vis.trueBlockWidth * (d.final_state_index%(vis.colWidths[d.end_state])))
                 .attr("y", (d) => vis.outcomeCoordinates[d.end_state][1] + vis.trueBlockWidth * Math.floor(1.0*(d.final_state_index)/vis.colWidths[d.end_state]))
@@ -1177,6 +1177,8 @@ TileChart.prototype.updateCounts = function(outcome) {
     // Return the full text string to be inserted into the hover tooltip over the group labels/headers
     return outputString;
 };
+
+
 
 // if(!phoneBrowsing){
 $(window).on("scroll", function () {

@@ -78,8 +78,11 @@ strong {
     z-index -1
   #sample-tooltip
     @media (max-width: 600px)
-      .detail-title, .details
-        font-size 12px
+      .detail-title
+        font-size .65rem
+        letter-spacing 0px
+      .details
+        font-size .8rem
 
 
 
@@ -115,14 +118,11 @@ p {
     z-index: 90;
     padding: 1px;
     cursor: pointer;
-    background-color: rgba(255,238,153, 0.6);
-    display: inline-block;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-weight:500;
-    font-size:.9rem;
-    font-family: 'Atlas Grotesk Web';
+    background none
 }
+
+.highlight-span
+  background none
 
 .d3-tip
   overflow-y auto
@@ -185,18 +185,51 @@ p {
       border 1px solid #a7a7a7
 
 #last-sample-annotation
-  span
+  background none
+.highlight-span
+  .text-label
     background-color rgba(242,142,44,0.6)
+    padding-left 5px
+    padding-right 5px
+    font-weight 500
+    font-size .9rem
+    font-family $atlas
+  .icon-label
+    background #f1f1f1
+    width 21px
+    height 21px
+    border-radius 50%
+    display inline-flex
+    justify-content center
+    align-self center
+  svg
+    width 10px
+    align-self center
+    path
+      fill #333
+.annotation-span
+  background-color #f7f7f7
+  display none
+  font-family $atlas
+  font-size .8rem
+  font-weight 400
+  padding 1rem
+  margin-top .5rem
+  margin-bottom .5rem
 
 #sunburst-wrapper
   .text-column
     section
       &:first-of-type
-        span:not(#no-highlight)
-          background-color rgba(101,141,198,0.6)
-      &:nth-of-type(2)
         span
-          background-color rgba(91,182,210,.8)
+          &:first-of-type
+            .text-label
+              background-color rgba(101,141,198,0.6)
+        #no-highlight
+          .text-label
+            background-color rgba(101,141,198,0)
+            padding 0
+
 
 
 #last-sample-annotation, #last-sunburst-annotation, #last-tilechart-annotation
@@ -370,8 +403,34 @@ p {
   margin 0 auto
   font-weight 400
   z-index -1
-  div
-    margin 0
+  border-radius 0px
+  border-color #d8ce78
+  background #fffcee
+  height calc(100% - 100px)
+  .sample-tooltip-wrapper
+    max-width 500px
+    display flex
+    flex-direction column
+    justify-content center
+    margin 0 auto
+    height 100%
+    p
+      margin 0
+      line-height 1.3
+      margin-bottom .5rem
+    @media (max-height: 900px)
+      p
+        margin-bottom .2rem
+        line-height 1.2
+      .details
+        font-size .9rem
+
+      .detail-title
+        font-size .7rem
+    @media (max-height: 700px)
+      max-width calc(100% - 20px)
+
+
   .detail-title, .persistent
     display inline-block
     margin 0
@@ -380,11 +439,17 @@ p {
     //min-width: 230px
     //text-align: right
     //float: right
+    text-transform uppercase
+    font-size .75rem
+    letter-spacing .5px
+    font-weight 100
   #complaint-summary
     font-size 1rem
     line-height 1.5
   .details
     font-size 1rem
+    line-height 1.2
+
 
 
 #sunburst-static-text {
@@ -442,9 +507,6 @@ p {
 }
 
 span.category-text {
-	padding: 1px;
-	padding-left: 2px;
-	padding-right: 2px;
 }
 
 //select.white, span.white {
@@ -701,14 +763,15 @@ hr {
     &:last-of-type
       font-weight 600
 
-.logo {
-    width:150px;
-    margin: 0 auto;
-    margin-top: 1rem;
-    display:block;
-    border: none;
-    text-decoration: none;
-}
+.logo
+  width 150px
+  margin 0 auto
+  margin-top 1rem
+  display block
+  border none
+  text-decoration none
+  @media (max-width: 600px)
+    width 120px
 
 .logo svg{
     width:100%;
@@ -723,7 +786,7 @@ hr {
     stroke:rgb(255,255,255,.66);
     stroke-width:3px;
     fill:white;
-    stroke-opacity:.2;
+    stroke-opacity:.5;
 }
 
 .matrix-image {
@@ -1198,4 +1261,26 @@ hr {
     #sunburst-val-total-text {
         font-size: 11px;
     }
+}
+.yellow-and-gold
+  font-weight 600
+  background #feee99
+
+
+.sunburst-select-active
+  animation pulse 3s infinite
+  //outline 1px solid black
+  box-shadow 0px 0px 0px 5px #FC5185
+
+@keyframes pulse {
+  0% {
+    //outline-width:1px;
+    //outline-color:rgba(0,0,0,1);
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,.5);
+  }
+  100% {
+    //outline-width:10px;
+    //outline-color:rgba(0,0,0,0);
+    box-shadow: 0px 0px 0px 10px rgba(0,0,0,0);
+  }
 }
