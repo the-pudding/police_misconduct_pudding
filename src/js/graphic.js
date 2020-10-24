@@ -966,6 +966,7 @@ function tilechartEntrance() {
 function highlightTile() {
     // Specific story picked for highlight (function will look for this tile, and if it doesn't find it, trigger a random one)
     const selectedStory = "13-0541-PS-Physical Abuse";
+    console.log(tileChart.tilechartReady);
 
     // Only if coming from the top, clear any existing tooltips and trigger the highlightTile() function
     if (scrollDirection === 'down' && tileChart.tilechartReady === true) {
@@ -974,6 +975,7 @@ function highlightTile() {
         // startRange = startDate;
         // endRange = addMonths(startDate, maxDateOffset);
         // updateTilechartDates();
+
 
         tileChart.highlightTile(selectedStory);
     }

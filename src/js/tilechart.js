@@ -594,15 +594,17 @@ TileChart.prototype.updateVis = function() {
                 // After initializing in the top center of the visual, tile will transition to correct outcome group and correct position within that outcome group
                 // using the outcomeCoordinates dict and the final_state_index assigned in the wrangleData() function for its offset within that tile group
                 // .transition()
-                //     .duration(600)
-                    // .delay(0)
+                //     .duration(0)
+                //     .delay(0)
                     .attr("x",  d => vis.outcomeCoordinates[d.end_state][0] + vis.trueBlockWidth * (d.final_state_index%vis.colWidths[d.end_state]))
                     .attr("y", d => vis.outcomeCoordinates[d.end_state][1] + vis.trueBlockWidth * ~~(d.final_state_index/vis.colWidths[d.end_state]))
-                    .on("end", function() {
+                    // .on("end", function() {
                         // Now, tilechartReady is set to true, where it will remain permanently. Initialized as false to protect against things that shouldn't run
                         // prior to full initialization running from the main.js controller on very fast scrolls.
-                        vis.tilechartReady = true;
-                    });
+                    // });
+                    //
+                    vis.tilechartReady = true;
+
 
     // For tile already in place, find/move to new position based on updated sort order. Because tiles are sorted by 'group by' attribute and date,
     // there's a level or re-arranging that needs to take place among existing tiles whenever parameters change and new tile enter/leave.
@@ -635,6 +637,8 @@ TileChart.prototype.updateVis = function() {
 TileChart.prototype.highlightTile = function(disciplineID) {
     const vis = this;
     const transitionDuration = 600;
+
+    console.log("highlight tile");
 
     // Find the featuredTile based on the input disciplineID (explicitly chosen in this case)
     vis.featuredTile = vis.g.selectAll("rect.complaint-box").filter(d => d.discipline_id === disciplineID);
