@@ -161,58 +161,98 @@ const textAnnotations = {
 
 // jQuery to move div and create pop-up tooltip with annotation
 function setAnnotationTooltips() {
-    $('.annotated-text')
-    // .on("mouseover", function() {
-        .on("mousemove hover touch", function () {
 
-            // This will be used for both the sample investigation and other annotation tooltips
-            // Determine which tooltip to trigger based on ID of highlighted text
-            let tooltipSelect;
-            if ($(this).attr("id") === 'sample-investigation') {
-                tooltipSelect = $("#sample-tooltip");
-            }
-            else {
-                tooltipSelect = $("#annotation-tooltip");
+    d3.selectAll(".annotated-text")
+      .each(function(d){
+        let text = d3.select(this).text();
+        d3.select(this).text("")
+        d3.select(this).selectAll("span")
+        .data([text,textAnnotations[text.toLowerCase()]])
+        .enter()
+        .append("span")
+        .attr("class",function(d,i){
+          if(i==0){
+            return "highlight-span"
+          }
+          return "annotation-span"
+        })
+        .html(function(d,i){
+          let color = "inherit";
+          if(d == "guilty finding"){
+            color = "background-color:rgba(123,195,218,.6);"
+          }
+          if(i==0){
+            return "<span class='text-label' style='"+color+"'>"+d + '</span> <span class="icon-label"><svg viewBox="0 0 16 16"> <path d="M8 12.043l7.413-8.087H.587z"></path></span> </svg>'
+          }
+          return d;
+        })
+      })
+      ;
 
-                tooltipSelect
-                    .text(textAnnotations[$(this).text().toLowerCase()]);
-            }
+    d3.selectAll(".highlight-span").on("click",function(d){
+      if(d3.select(this.parentNode).select(".annotation-span").style("display") == "block"){
+        d3.select(this.parentNode).select(".annotation-span").style("display",null);
+        d3.select(this).select("svg").style("transform",null)
+      }
+      else {
+        d3.select(this.parentNode).select(".annotation-span").style("display","block");
+        d3.select(this).select("svg").style("transform","rotate(180deg)")
+      }
 
-            // If the tooltip would end up off the page to the left, adjust the positioning to the right by the amount it flows over
-            let xOffset = event.pageX - tooltipSelect.width() / 2;
-            if (xOffset < 0) {
-                xOffset += -1 * xOffset;
-            }
+    })
 
-            // If the tooltip would end up off the screen to the top, adjust the positioning down by the amount it flows over
-            let yOffset = event.pageY - tooltipSelect.height() - 35;
-            if (event.clientY < tooltipSelect.height() + 35) {
-                yOffset = event.pageY + 15;
-            }
-
-            // Make the (dormant/hidden, but already existant) tooltip div visible, up-top of other elements and position it
-            // according to the offsets determined above
-            tooltipSelect
-                .css({top: yOffset, left: xOffset})
-                .css("opacity", 1.0)
-                .css("z-index", 101);
-        });
-
-    // If hover available (desktop), remove highlighted text annotation on mouseout otherwise (mobile) do it on scroll
-    if (phoneBrowsing === false) {
-        $('.annotated-text')
-            .on("mouseout", function () {
-                let tooltipSelect = $(this).attr("id") === 'sample-investigation' ?
-                    $("#sample-tooltip") :
-                    $("#annotation-tooltip");
-
-                tooltipSelect
-                    .css("opacity", 0.0)
-                    .css("z-index", -1);
-            });
-    }
-    else {
-    }
+    // $('.annotated-text')
+    // // .on("mouseover", function() {
+    //     .on("mousemove hover touch", function () {
+    //
+    //         // This will be used for both the sample investigation and other annotation tooltips
+    //         // Determine which tooltip to trigger based on ID of highlighted text
+    //         let tooltipSelect;
+    //         if ($(this).attr("id") === 'sample-investigation') {
+    //             tooltipSelect = $("#sample-tooltip");
+    //         }
+    //         else {
+    //             tooltipSelect = $("#annotation-tooltip");
+    //
+    //             tooltipSelect
+    //                 .text(textAnnotations[$(this).text().toLowerCase()]);
+    //         }
+    //
+    //         // If the tooltip would end up off the page to the left, adjust the positioning to the right by the amount it flows over
+    //         let xOffset = event.pageX - tooltipSelect.width() / 2;
+    //         if (xOffset < 0) {
+    //             xOffset += -1 * xOffset;
+    //         }
+    //
+    //         // If the tooltip would end up off the screen to the top, adjust the positioning down by the amount it flows over
+    //         let yOffset = event.pageY - tooltipSelect.height() - 35;
+    //         if (event.clientY < tooltipSelect.height() + 35) {
+    //             yOffset = event.pageY + 15;
+    //         }
+    //
+    //         // Make the (dormant/hidden, but already existant) tooltip div visible, up-top of other elements and position it
+    //         // according to the offsets determined above
+    //         tooltipSelect
+    //             .css({top: yOffset, left: xOffset})
+    //             .css("opacity", 1.0)
+    //             .css("z-index", 101);
+    //     });
+    //
+    // // If hover available (desktop), remove highlighted text annotation on mouseout otherwise (mobile) do it on scroll
+    // if (phoneBrowsing === false) {
+    //     $('.annotated-text')
+    //         .on("mouseout", function () {
+    //             let tooltipSelect = $(this).attr("id") === 'sample-investigation' ?
+    //                 $("#sample-tooltip") :
+    //                 $("#annotation-tooltip");
+    //
+    //             tooltipSelect
+    //                 .css("opacity", 0.0)
+    //                 .css("z-index", -1);
+    //         });
+    // }
+    // else {
+    // }
 }
 
 // Apply necessary trnsformations to the data loaded in the dataset
@@ -511,9 +551,20 @@ function setSelectOptions(optionPairs) {
         let selectID = pair[0];
         let optionVal = pair[1];
 
-        $(`select#${selectID}`)
-            .val(optionVal)
-            .attr("class", `sunburst-select ${$(`select#${selectID}`).val()}`);
+        let prevValue = $(`select#${selectID}`).val();
+
+        if(prevValue != optionVal && optionVal != "all"){
+          $(`select#${selectID}`)
+              .val(optionVal)
+              .attr("class", `sunburst-select sunburst-select-active ${$(`select#${selectID}`).val()}`);
+
+        } else {
+          $(`select#${selectID}`)
+              .val(optionVal)
+              .attr("class", `sunburst-select ${$(`select#${selectID}`).val()}`);
+
+        }
+
     });
 
     // Re-render the sunburst with the new filters (the sunburst code will look for these dropdown select values on its own)
@@ -622,8 +673,8 @@ function showInvestigationGroups() {
 
 
     // Hide all child (disciplinary outcome) sections
-    // $("#sunburst-area path.child")
-    //     .css("fill-opacity", 0.3);
+    // $("#sunburst-area path")
+    //     .css("fill-opacity", 1);
 
     // Highlight only the parent (investigative outcome) sections
     // $("#sunburst-area path.parent")
@@ -672,12 +723,36 @@ function highlightSustained() {
     artificialHover("Sustained Finding");
 
     // Hide all outcome groups
-    $("#sunburst-area path")
-        .css("fill-opacity", 0.3);
+    // $("#sunburst-area path")
+    //     .css("fill-opacity", 0.3);
 
-    // Highlight only the "not sustained" section
-    $("#sunburst-area path.Sustained-Finding")
-        .css("fill-opacity", 0.8);
+    $("#sunburst-area path")
+        .css("fill-opacity", .5);
+
+    $("#Sustained-Finding")
+        .css("fill-opacity", 1);
+
+    d3.selectAll(".sunburst-chart-labels")
+      .style("opacity",null)
+
+    d3.selectAll(".sunburst-chart-label-shadows")
+      .style("opacity",null)
+
+    d3.select("#Sustained-Finding")
+        // .attr("fill-opacity", 1)
+        .style("stroke-width","2px")
+        .style("stroke","black")
+        ;
+
+    d3.select("#Guilty-Finding")
+        .style("stroke-width",null)
+        .style("stroke",null)
+        ;
+
+    //
+    // // Highlight only the "not sustained" section
+    // $("#sunburst-area path.Sustained-Finding")
+    //     .css("fill-opacity", 0.8);
 
 }
 
@@ -740,11 +815,10 @@ function showDisciplinaryGroups() {
 
     // Hide all the parent (investigative outcome) sections
     d3.select("#sunburst-area").selectAll("path")
-        .style("fill-opacity", 0.3);
+        .style("fill-opacity", 0.5);
 
     // Highlight the 'Sustained Finding' parent section, specifically
-    d3.select("#Guilty-Finding")
-        .style("fill-opacity", null);
+
 
     // Simulate a hover over the 'sustained finding' section
     artificialHover("Guilty Finding");
@@ -892,6 +966,7 @@ function tilechartEntrance() {
 function highlightTile() {
     // Specific story picked for highlight (function will look for this tile, and if it doesn't find it, trigger a random one)
     const selectedStory = "13-0541-PS-Physical Abuse";
+    console.log(tileChart.tilechartReady);
 
     // Only if coming from the top, clear any existing tooltips and trigger the highlightTile() function
     if (scrollDirection === 'down' && tileChart.tilechartReady === true) {
@@ -900,6 +975,7 @@ function highlightTile() {
         // startRange = startDate;
         // endRange = addMonths(startDate, maxDateOffset);
         // updateTilechartDates();
+
 
         tileChart.highlightTile(selectedStory);
     }
