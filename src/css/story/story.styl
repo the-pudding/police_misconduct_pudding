@@ -148,6 +148,11 @@ p {
   margin-top -50vh
   position relative
   z-index 100000000
+  transform translateZ(0)
+  .step
+    position relative
+    z-index 100000000
+
   @media (max-width: 1100px)
     margin-top 0
     pointer-events none
@@ -503,9 +508,7 @@ p {
 
 .sunburst-select {
 	background-color: #fff;
-	border: 1px solid #cdcdcd;
-    font-size:1rem;
-
+  font-size:1rem;
 	padding-left: 3px;
 	padding-right: 3px;
 }
@@ -1029,14 +1032,20 @@ hr {
     max-width:100px;
 }
 
-.sunburst-title {
-    width: 100%;
-    display:flex;
-    justify-content: flex-end;
-    height: 100px;
-    flex-direction: column;
-    pointer-events: all;
-}
+.sunburst-title
+  width 100%
+  display flex
+  justify-content flex-end
+  height 100px
+  flex-direction column
+  pointer-events all
+  @media (max-width:1100px)
+    height 140px
+    justify-content center
+    #sunburst-select-text
+      margin-top 0
+      line-height 2.4
+
 
 #sunburst-tile {
     height:100vh;
@@ -1047,7 +1056,8 @@ hr {
     position: sticky;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: 100;
+    transform: translateZ(0);
 }
 
 #sunburst-wrapper .viz-area {
@@ -1111,10 +1121,6 @@ hr {
       max-width: 25px;
       right: 5%;
       top: 5%;
-    }
-
-    .step {
-      z-index: 100;
     }
 
     .step.phantom {
