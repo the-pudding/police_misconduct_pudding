@@ -218,11 +218,20 @@ Sunburst.prototype.wrangleData = function() {
     let subroot = vis.root.children
         .find(d => typeof d.children !== "undefined" && d.children.length > 0);
 
+
     if (typeof subroot !== "undefined") {
         subroot
             .children
             .forEach(child => vis.displaySecondLevel === false ? child.y1 = child.y0 : child.y1 = child.y1);
-    };
+    }
+    else if (phoneBrowsing === true) {
+        vis.root
+          .children
+          .forEach(child => {
+            child.y0 = 0.66667*child.y0;
+            child.y1 = 0.66667*child.y1;
+          });
+    }
 
     vis.updateVis();
 
