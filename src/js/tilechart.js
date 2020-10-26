@@ -367,6 +367,8 @@ TileChart.prototype.initVis = function() {
 // This will gather variable values and format data correctly render/re-render tilechart
 TileChart.prototype.wrangleData = function() {
 
+  console.log("wrangling");
+
     startRange = graphic.getStartRange();
     startDate = graphic.getStartDate();
     endRange = graphic.getEndRange();
@@ -503,7 +505,7 @@ TileChart.prototype.updateVis = function() {
         .enter()
             .append("rect")
                 .attr("class", "complaint-box")
-                .style("fill-opacity", 0.9)
+                // .style("fill-opacity", 0.9)
                 // Initial X and Y coordinates for the tile are set to center top of the visualization area, where they'll 'enter' from
                 .attr("y", -100)
                 .attr("x", vis.col2x + vis.trueBlockWidth * vis.colWidths["No Sustained Findings"] / 2)
@@ -625,9 +627,9 @@ TileChart.prototype.updateVis = function() {
                 })
                 .attr("height", vis.blockSize)
                 .attr("width", vis.blockSize)
-                .attr("stroke-width", 0)
-                .attr("stroke", "none")
-                .style("fill-opacity", 0.9)
+                // .attr("stroke-width", 0)
+                // .attr("stroke", "none")
+                // .style("fill-opacity", 0.9)
 
 
 };
@@ -786,8 +788,8 @@ TileChart.prototype.highlightTileSection = function(sectionName) {
 TileChart.prototype.returnTileSections = function() {
     const vis = this;
 
-    vis.tilechart
-        .style("fill-opacity", 0.9);
+    // vis.tilechart
+    //     .style("fill-opacity", 0.9);
 };
 
 // Initializes hover tooltips with investigation details
