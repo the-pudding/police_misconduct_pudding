@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81d3d273-ae41-43d7-9294-2513ed7fd8eb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/css/story/story.styl" afterPath="$PROJECT_DIR$/src/css/story/story.styl" />
+      <change beforePath="$PROJECT_DIR$/src/js/tilechart.js" afterPath="$PROJECT_DIR$/src/js/tilechart.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,12 +25,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tilechart.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tilechart.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/tilechart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="698" column="0" lean-forward="false" selection-start-line="698" selection-start-column="0" selection-end-line="698" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="278">
+              <caret line="920" column="147" lean-forward="false" selection-start-line="920" selection-start-column="147" selection-end-line="920" selection-end-column="147" />
+              <folding>
+                <marker date="1603674752335" expanded="true" signature="46616:46656" ph="..." />
+                <marker date="1603674752335" expanded="true" signature="52916:52947" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,7 +70,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="story.styl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="story.styl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/css/story/story.styl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="485">
@@ -81,7 +84,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$(&quot;.close</find>
       <find>close-tool</find>
       <find>close-</find>
       <find>.chosen-container</find>
@@ -111,6 +113,7 @@
       <find>highlightsusta</find>
       <find>tip-text</find>
       <find>.tip-text</find>
+      <find>sample-tooltip</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -122,11 +125,11 @@
         <option value="$PROJECT_DIR$/src/js/main.js" />
         <option value="$PROJECT_DIR$/src/html/index.hbs" />
         <option value="$PROJECT_DIR$/src/js/d3-tip.js" />
-        <option value="$PROJECT_DIR$/src/js/tilechart.js" />
         <option value="$PROJECT_DIR$/src/js/sunburst.js" />
         <option value="$PROJECT_DIR$/src/html/partials/story/intro.hbs" />
         <option value="$PROJECT_DIR$/src/js/graphic.js" />
         <option value="$PROJECT_DIR$/src/css/story/story.styl" />
+        <option value="$PROJECT_DIR$/src/js/tilechart.js" />
       </list>
     </option>
   </component>
@@ -362,7 +365,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10365">
           <caret line="694" column="0" lean-forward="false" selection-start-line="694" selection-start-column="0" selection-end-line="694" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1603674752335" expanded="true" signature="46616:46656" ph="..." />
+            <marker date="1603674752335" expanded="true" signature="52916:52947" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -414,7 +420,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10350">
           <caret line="693" column="25" lean-forward="false" selection-start-line="693" selection-start-column="25" selection-end-line="693" selection-end-column="25" />
-          <folding />
+          <folding>
+            <marker date="1603674752335" expanded="true" signature="46616:46656" ph="..." />
+            <marker date="1603674752335" expanded="true" signature="52916:52947" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -432,7 +441,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10125">
           <caret line="678" column="31" lean-forward="false" selection-start-line="678" selection-start-column="31" selection-end-line="678" selection-end-column="31" />
-          <folding />
+          <folding>
+            <marker date="1603674752335" expanded="true" signature="46616:46656" ph="..." />
+            <marker date="1603674752335" expanded="true" signature="52916:52947" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -450,7 +462,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10200">
           <caret line="683" column="0" lean-forward="false" selection-start-line="683" selection-start-column="0" selection-end-line="683" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1603674752335" expanded="true" signature="46616:46656" ph="..." />
+            <marker date="1603674752335" expanded="true" signature="52916:52947" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -468,7 +483,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10200">
           <caret line="683" column="0" lean-forward="true" selection-start-line="683" selection-start-column="0" selection-end-line="683" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1603674752335" expanded="true" signature="46616:46656" ph="..." />
+            <marker date="1603674752335" expanded="true" signature="52916:52947" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -486,24 +504,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10545">
           <caret line="706" column="0" lean-forward="true" selection-start-line="706" selection-start-column="0" selection-end-line="706" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/tilechart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="698" column="0" lean-forward="false" selection-start-line="698" selection-start-column="0" selection-end-line="698" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/sunburst.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="105" column="100" lean-forward="false" selection-start-line="105" selection-start-column="100" selection-end-line="105" selection-end-column="100" />
           <folding>
-            <element signature="e#0#34#0" expanded="true" />
+            <marker date="1603674752335" expanded="true" signature="46616:46656" ph="..." />
+            <marker date="1603674752335" expanded="true" signature="52916:52947" ph="..." />
           </folding>
         </state>
       </provider>
@@ -539,6 +542,27 @@
         <state relative-caret-position="485">
           <caret line="420" column="19" lean-forward="false" selection-start-line="420" selection-start-column="19" selection-end-line="420" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/sunburst.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="105" column="100" lean-forward="false" selection-start-line="105" selection-start-column="100" selection-end-line="105" selection-end-column="100" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/tilechart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="920" column="147" lean-forward="false" selection-start-line="920" selection-start-column="147" selection-end-line="920" selection-end-column="147" />
+          <folding>
+            <marker date="1603674752335" expanded="true" signature="46616:46656" ph="..." />
+            <marker date="1603674752335" expanded="true" signature="52916:52947" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -851,7 +851,7 @@ TileChart.prototype.setToolTips = function() {
             }
             // Based on the outcome group, the direction of the tooltip relative to the tile will change, and therefore
             // the offsets will need to change a little too, so that the tooltip is positioned next ot the tile and not on top of it
-            else if (vis.outcomeCoordinates[d.end_state][1] + vis.trueBlockWidth * Math.floor(1.0*(d.final_state_index)/vis.colWidths[d.end_state]) <= 15) {
+            else if (vis.outcomeCoordinates[d.end_state][1] + vis.trueBlockWidth * Math.floor(1.0*(d.final_state_index)/vis.colWidths[d.end_state]) <= 35) {
                 yOffset += vis.blockSize;
             }
             else if (d.end_state === 'No Guilty Findings' || d.end_state === 'Discipline Pending') {
@@ -918,7 +918,7 @@ TileChart.prototype.setToolTips = function() {
             }
 
             // if (d.complaint_id === "19-0464") {
-            if (vis.outcomeCoordinates[d.end_state][1] + vis.trueBlockWidth * Math.floor(1.0*(d.final_state_index)/vis.colWidths[d.end_state]) <= 15) {
+            if (vis.outcomeCoordinates[d.end_state][1] + vis.trueBlockWidth * Math.floor(1.0*(d.final_state_index)/vis.colWidths[d.end_state]) <= 35) {
                 return "s";
             }
             else if (d.end_state === 'No Guilty Findings' || d.end_state === 'Discipline Pending') {
