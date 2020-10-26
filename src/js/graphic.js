@@ -965,7 +965,7 @@ function tilechartEntrance() {
 // Activate function: triggers on annotation "Stories Behind The Complaints"
 function highlightTile() {
     // Specific story picked for highlight (function will look for this tile, and if it doesn't find it, trigger a random one)
-    const selectedStory = "13-0541-PS-Physical Abuse";
+    const selectedStory = "15-0268-40106202-Physical Abuse";
     console.log(tileChart.tilechartReady);
 
     // Only if coming from the top, clear any existing tooltips and trigger the highlightTile() function

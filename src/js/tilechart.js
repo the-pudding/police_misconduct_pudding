@@ -537,7 +537,7 @@ TileChart.prototype.updateVis = function() {
                         vis.pinnedTooltip = false;
                     }
                     if (phoneBrowsing === true) {
-                        vis.svg.selectAll("rect.complaint-box").filter(x => x.discipline_id === d.discipline_id && d.complaint_id !== "13-0541").attr("fill", "black");
+                        vis.svg.selectAll("rect.complaint-box").filter(x => x.discipline_id === d.discipline_id && d.complaint_id !== "15-0268").attr("fill", "black");
                     }
 
 
@@ -998,7 +998,7 @@ TileChart.prototype.setToolTips = function() {
 
             // This is the designated highlightTile (if available).
             // We'll highlight some particular text on it for annotation purposes, using the calloutSummary() function
-            if (d.discipline_id === "13-0541-PS-Physical Abuse") {
+            if (d.discipline_id === "15-0268-40106202-Physical Abuse") {
                 summaryText = calloutSummary(summaryText);
             }
 
@@ -1025,9 +1025,13 @@ TileChart.prototype.setToolTips = function() {
 // 'Stories Behind the Complaints' annotation if its in the set of filtered tiles
 function calloutSummary(summaryText) {
     const highlights = [
-        'the officer said, "If you hold your d**k tight it won\'t fall off, do you want me to hold it for you, f*ggot?"',
-        'he cut him off, stating that his officers would not say anything like that and what occurred was not harassment',
-        'The sergeant ordered the complainant to put his hands up.  After he was handcuffed, the sergeant kicked him numerous times.'
+        // 'the officer said, "If you hold your d**k tight it won\'t fall off, do you want me to hold it for you, f*ggot?"',
+        // 'he cut him off, stating that his officers would not say anything like that and what occurred was not harassment',
+        // 'The sergeant ordered the complainant to put his hands up.  After he was handcuffed, the sergeant kicked him numerous times.'
+        'The complainant felt threatened and ran from the males.  He was caught and thrown to the ground by the two males, who kicked and punched the complainant.',
+        'told the complainant he and his friends were robbery suspects.',
+        'he was not their suspect',
+        'The officers then released the complainant to his mother, who took him to the hospital for treatment'
     ];
 
     highlights.forEach((textBlock) => {
