@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81d3d273-ae41-43d7-9294-2513ed7fd8eb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/js/sunburst.js" afterPath="$PROJECT_DIR$/src/js/sunburst.js" />
-    </list>
+    <list default="true" id="81d3d273-ae41-43d7-9294-2513ed7fd8eb" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,8 +39,8 @@
       <file leaf-file-name="sunburst.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/sunburst.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="210" column="7" lean-forward="true" selection-start-line="210" selection-start-column="7" selection-end-line="210" selection-end-column="7" />
+            <state relative-caret-position="253">
+              <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="233" selection-end-column="5" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -559,8 +556,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/sunburst.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="210" column="7" lean-forward="true" selection-start-line="210" selection-start-column="7" selection-end-line="210" selection-end-column="7" />
+        <state relative-caret-position="253">
+          <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="233" selection-end-column="5" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
