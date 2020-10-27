@@ -71,13 +71,14 @@ strong {
   &:before
     display none
   @media (max-width: 1100px)
-    width calc(100vw - 50px)
+    width calc(100vw - 25px)
     margin 0 auto
     top:0px
     margin-top 0px
     z-index -1
   #sample-tooltip
     @media (max-width: 600px)
+      height calc(100% - 30px)
       .detail-title
         font-size .65rem
         letter-spacing 0px
@@ -1330,3 +1331,31 @@ hr {
     box-shadow: 0px 0px 0px 10px rgba(0,0,0,0);
   }
 }
+
+.chosen-container-multi
+  .chosen-drop
+    padding .5rem
+    .result-selected
+      font-size .8rem
+      color #666
+      font-weight 400
+      text-align left
+      margin-bottom .5rem
+
+  .chosen-results
+    .active-result
+      font-weight 600
+      text-align left
+      margin-bottom .5rem
+      color black
+      font-size .8rem
+      &:hover
+        background none
+        color black
+        text-decoration underline
+    .highlighted
+      font-weight 600
+      text-align left
+      margin-bottom .5rem
+      color black
+      font-size .8rem
