@@ -103,16 +103,21 @@ p {
     margin-bottom: 1.5rem;
 }
 
-#intro-tile h1{
-    font-family: 'Atlas Grotesk Web';
-    font-weight:400;
-    margin: 0 auto;
-    margin-bottom: 4rem;
-    text-align:center;
-    margin-top: 4rem;
-    line-height:1.4;
-    max-width:700px;
-}
+#intro-tile h1
+  font-family 'Atlas Grotesk Web'
+  font-weight 400
+  margin 0 auto
+  margin-bottom 4rem
+  text-align center
+  margin-top 4rem
+  line-height 1.4
+  max-width 700px
+  @media (max-width: 1100px)
+    font-size 30px
+  @media (max-width: 400px)
+    font-size 27px
+  @media (max-width: 350px)
+    font-size 26px
 
 .annotated-text {
     z-index: 90;
@@ -214,7 +219,7 @@ p {
     justify-content center
     align-self center
   svg
-    width 10px
+    width 14px
     align-self center
     path
       fill #333
@@ -513,15 +518,24 @@ p {
 	padding-right: 3px;
 }
 
-#category-tooltip {
-    line-height: 1.1;
-    font-size: 9pt;
-}
+#category-tooltip
+  line-height 1.1
+  font-size 9pt
 
-.d3-tip {
-    position: fixed;
-    line-height: 1;
-}
+#sunburst-po-race, #sunburst-complainant-race
+  width 110px
+
+#sunburst-district-income-group
+  width 50px
+
+.d3-tip
+  position fixed
+  line-height 1
+  @media (min-width: 1100px)
+    z-index 1000000000
+  p, span
+    font-size 12px
+
 
 .annotation-li {
 	margin-bottom: 5px;
