@@ -398,7 +398,7 @@ Sunburst.prototype.addLabelShadows = function() {
         .enter()
         .append("text")
         .attr("class", "sunburst-chart-label-shadows")
-        .style("stroke",function(d){
+        .style("stroke", d => {
           let color = d3.color(outcomeColors(d.data.name)).brighter(2);
           return color;
         })

@@ -182,7 +182,7 @@ function setAnnotationTooltips() {
             color = "background-color:rgba(123,195,218,.6);"
           }
           if(i==0){
-            return "<span class='text-label' style='"+color+"'>"+d + '</span> <span class="icon-label"><svg viewBox="0 0 16 16"> <path d="M8 12.043l7.413-8.087H.587z"></path></span> </svg>'
+            return "<span class='text-label' style='"+color+"'>"+d + '</span> <span class="icon-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>'
           }
           return d;
         })
