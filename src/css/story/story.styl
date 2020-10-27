@@ -599,9 +599,9 @@ span.category-text {
 }
 
 
-.chosen-container {
-    width: 300px;
-}
+//.chosen-container {
+//    width: 300px;
+//}
 
 
 .chosen-container-div {
@@ -1333,6 +1333,10 @@ hr {
 }
 
 .chosen-container-multi
+  @media (min-width: 1340px)
+    min-width 410px
+  @media (max-width: 1339px)
+    min-width 300px
   .chosen-drop
     padding .5rem
     .result-selected
@@ -1359,3 +1363,9 @@ hr {
       margin-bottom .5rem
       color black
       font-size .8rem
+
+//@media (max-width: 1250px) {
+//  .chosen-container-multi {
+//    width: 300px !important;
+//  }
+//}
