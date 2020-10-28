@@ -77,6 +77,21 @@ strong {
     margin-top 0px
     z-index -1
   #sample-tooltip
+    @media (max-height: 600px)
+      .sample-tooltip-wrapper
+        width 100%
+        max-width 100%
+        p
+          &:first-of-type
+            line-height .9
+    @media (max-height: 600px)
+      .sample-tooltip-wrapper
+        p
+          &:first-of-type
+            font-size 11px
+            margin-bottom .2rem
+
+
     @media (max-width: 600px)
       height calc(100% - 30px)
       .detail-title
@@ -133,6 +148,7 @@ p {
 
 .d3-tip
   overflow-y auto
+  pointer-events all
   .tip-text
     font-size 14px
     font-weight 300
@@ -146,6 +162,14 @@ p {
       font-weight 600
     @media (max-width: 1250px)
       font-size 12px
+  @media (max-width: 600px)
+    width calc(100% - 10px)
+    .details
+      line-height .9
+    .tip-text
+      .complaint-id
+        display none
+
 
 #sections, .text-column
   width var(--annotation-width)
@@ -399,15 +423,20 @@ p {
   align-self:center;
 }
 
-.d3-tip, #annotation-tooltip, #category-tooltip, #sample-tooltip {
-  max-width: 480px;
-	background-color: white;
-	color: black;
-	border-radius: 5px;
-	border: 1px solid black;
-	z-index: 100;
-    padding: 12px;
-}
+.d3-tip, #annotation-tooltip, #category-tooltip, #sample-tooltip
+  max-width 480px
+  background-color white
+  color black
+  border-radius 5px
+  border 1px solid black
+  z-index 100
+  padding 12px
+  @media (max-width: 1100px)
+    width calc(100vw - 50px)
+    z-index 1000000
+  @media (max-height: 700px)
+    width calc(100vw - 10px)
+    max-height 50vh
 
 #complaint-summary{
   margin-bottom:1rem;
@@ -524,7 +553,8 @@ p {
   font-size 9pt
 
 #sunburst-po-race, #sunburst-complainant-race
-  width 110px
+  width 170px
+
 
 #sunburst-district-income-group
   width 50px
@@ -1118,13 +1148,7 @@ hr {
     #chart-area svg {
         /*height:100%;*/
         width:100vw;
-    }
-
-    .d3-tip {
-        /*max-width: 300px;*/
-        width: calc(100vw - 50px);
-        /*left: 30px;*/
-        z-index: 50;
+        z-index:0;
     }
 
     .d3-tip::after {

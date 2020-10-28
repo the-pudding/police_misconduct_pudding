@@ -550,6 +550,7 @@ TileChart.prototype.updateVis = function() {
 
                         tooltip
                           // .css("position", "fixed")
+                            .css("left", 5)
                             .css("top", () => n[i].getBBox().y > vh/2 ?
                                 n[i].getBBox().y - tooltipHeight - 2 :
                                 n[i].getBBox().y + vis.blockSize + 2);
@@ -573,6 +574,8 @@ TileChart.prototype.updateVis = function() {
                         console.log("clicked");
                         vis.tip.hide();
                       })
+
+
                 })
                 .on("mouseout", (d) => {
                     $(".d3-tip")
@@ -708,12 +711,14 @@ TileChart.prototype.highlightTile = function(disciplineID) {
             // On mobile: it's oriented "south", so the fixed position is a little different, unless it's a random tile
             // or non-standard filters and the tile is on the far left, in which case it'll default back to the "east" orientation
 
+
             if (phoneBrowsing === true) {
                 let tileY = tileChart.featuredTile.node().getBBox().y;
 
                 highlightTip
                     .css("position", "fixed")
-                    .css("top", tileY + tileHeight + 2);
+                    .css("top", tileY + tileHeight + 2)
+                    .css("left", 5);
                     // .css("left", "25px");
 
                     document.getElementById("chart-area").appendChild(d3.select(".d3-tip").node());
@@ -887,7 +892,8 @@ TileChart.prototype.setToolTips = function() {
             if (phoneBrowsing === true) {
                 let yVal = d3.selectAll("rect.complaint-box").filter(i => d.discipline_id === i.discipline_id).node().getBBox().y;
                 console.log(yVal, yOffset);
-                return [yVal + yOffset, xOffset];
+                return [yVal + yOffset, 0];
+                //return [yVal + yOffset, xOffset];
                 // return [d3.event.clientY + yOffset, xOffset];
             }
             else {
@@ -977,7 +983,7 @@ TileChart.prototype.setToolTips = function() {
 
             tipText += "<span class='detail-title'>District</span>: <span class='details'>" + d.district_occurrence + ` (Median Income: ${d3.format("$,.0f")(d.district_income)})` + "</span><br>";
 
-            tipText += "<span class='detail-title'>Complaint ID</span>: <span class='details'>" + d.complaint_id + "</span><br><br>";
+            tipText += "<span class='detail-title complaint-id'>Complaint ID:</span> <span class='details complaint-id'>" + d.complaint_id + "<br></span>";
 
             tipText += "<span class='detail-title'>Complaint Type</span>: <span class='details'>" + d.general_cap_classification + "</span><br>";
             if (d.allegations_investigated) {
@@ -1011,7 +1017,8 @@ TileChart.prototype.setToolTips = function() {
             }
 
             return tipText;
-        });
+        })
+        ;
 
     // Create actual d3-tip element, which will sit hidden until tip.show() is run.
     // Due to complications with the pinned highlightTile tooltip,
