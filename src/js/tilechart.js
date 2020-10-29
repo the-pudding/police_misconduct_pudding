@@ -322,7 +322,7 @@ TileChart.prototype.initVis = function() {
                 .css("opacity", 0.0)
                 .css("z-index", -1);
         })
-        .text(d => d);
+        .text(d => (phoneBrowsing === true && d === "Training/Counseling") ? "Training" : d);
 
     // Definte all incident types for initializing the 'Complaint Classification' multi-select
     // vis.incidentTypes = ['Departmental Violations', 'Lack Of Service', 'Physical Abuse',  'Verbal Abuse','Unprofessional Conduct', 'Criminal Allegation', 'Harassment','Civil Rights Complaint','Domestic', 'Falsification', 'Sexual Crime/Misconduct','Drugs']
@@ -526,7 +526,7 @@ TileChart.prototype.updateVis = function() {
                 .style("stroke", "#f9f9f9")
                 .style("stroke-width", () => phoneBrowsing === true ? "1px" : "1px")
                 // Mouseenter/mouseout callback functions will trigger/remove tooltips for given investigation tile
-                .on("mouseenter", function(d,i,n){
+                .on("mouseenter", function(d,i,n) {
                     // If there's a highlighted tile with a pinned tooltip, we'll be extra cautious about removing that
                     // before making further tooltip changes
                     if (vis.pinnedTooltip === true) {
@@ -536,12 +536,12 @@ TileChart.prototype.updateVis = function() {
 
                         vis.pinnedTooltip = false;
                     }
+
                     if (phoneBrowsing === true) {
                         vis.svg.selectAll("rect.complaint-box").filter(x => x.discipline_id === d.discipline_id && d.complaint_id !== "15-0268").attr("fill", "black");
                     }
 
-
-                    vis.tip.show(d,this);
+                    vis.tip.show(d, this);
 
                     if (phoneBrowsing === true) {
 
@@ -581,6 +581,8 @@ TileChart.prototype.updateVis = function() {
                     $(".d3-tip")
                         .css('opacity', 0)
                         .css('pointer-events', 'none');
+
+                    vis.tip.hide();
 
                     tooltipVisible = false;
 
